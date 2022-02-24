@@ -7,7 +7,7 @@
                 <h3 class="m-0 font-weight-bold">Tambah Disposisi</h3><br>
                 <div class="col-md-12 grid-margin">
                     <div class="card-body">
-                    <?php echo form_open_multipart('riwayatdisposisi/tambah');?>
+                    <?php echo form_open_multipart('riwayatdisposisi/tambah_aksi');?>
                     <div class="col-12 grid-margin">
                     <div class="card">
                         <div class="card-body">
@@ -18,7 +18,7 @@
                                 <label class="col-sm-3 col-form-label">Sifat Surat</label>
                                 <div class="col-sm-9">
                                     <select id="sifatsurat_id" name="sifatsurat_id" class="form-control" readonly required>
-                                        <option value="" selected disabled>--Pilih Sifat Surat--</optiion>
+                                        <option value="" selected disabled>--Pilih Sifat Surat--</option>
                                         <?php foreach ($sifatsurat as $ss) : ?>
                                             <option <?php echo $suratmasuk['sifatsurat_id'] == $ss['id_sifatsurat'] ? 'selected' : '';?> <?php echo set_select('sifatsurat_id', $ss['id_sifatsurat']) ?> value="<?php echo $ss['id_sifatsurat'] ?>"><?php echo $ss['sifat_surat']?></option>
                                         <?php endforeach; ?>
@@ -103,25 +103,56 @@
                                     <textarea class="form-control" id="perihal" name="perihal" rows="4" readonly required><?php echo set_value('perihal', $suratmasuk['perihal']); ?></textarea>
                                 </div>
                                 </div> <br>
-                                <h4 class="card-title">Tambah Disposisi</h4><br>
-                                <h6>Diteruskan Kepada Yth</h6><br>
-                                <div class="col-sm-9">
-                                        <select id="sifatsurat_id" name="sifatsurat_id" class="form-control" readonly required>
-                                            <option value="" selected disabled>--Pilih Sifat Surat--</optiion>
-                                            <?php foreach ($sifatsurat as $ss) : ?>
-                                                <option <?php echo $suratmasuk['sifatsurat_id'] == $ss['id_sifatsurat'] ? 'selected' : '';?> <?php echo set_select('sifatsurat_id', $ss['id_sifatsurat']) ?> value="<?php echo $ss['id_sifatsurat'] ?>"><?php echo $ss['sifat_surat']?></option>
+                                <h4 class="card-title">Tambah Disposisi</h4>
+                                <!-- <h6>Diteruskan Kepada Yth</h6><br> -->
+                                <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Diteruskan Kepada Yth</label>
+                                <div class="col-sm-12">
+                                        <select id="nip" name="nip" class="form-control" required>
+                                            <option value="" selected disabled>--Pilih Nama--</option>
+                                            <?php foreach ($data_pegawai as $dp) : ?>
+                                                <option <?php echo set_select('nip', $dp['nip']) ?> value="<?php echo $dp['nip'] ?>"><?php echo $dp['jabatan'] . ' | ' . $dp['nama_pegawai'] ?></option>
                                             <?php endforeach; ?>
                                         </select>
-                                    </div>
-                                    </div>
-                                    <?php echo form_error('sifat_surat', '<div class="text-small text-danger"></div>') ?>
-                                    </div>
+                                </div>
+                                </div>
+                                <div>
+                                <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Isi Disposisi</label>
+                                <div class="col-sm-12">
+                                        <select id="isi" name="isi" class="form-control" required>
+                                            <option value="" selected disabled>--Pilih Isi Disposisi--</option>
+                                            <option>Harap Penyelesaian Selanjutnya</option>
+                                            <option>Minta Saran/Pendapat/Komentar</option>
+                                            <option>Untuk Diketahui/Digunakan Seperlunya</option>
+                                            <option>Harap Mewakili Saya</option>
+                                            <option>Untuk Dibicarakan Khusus</option>
+                                        </select>
+                                </div>
+                                </div>
+                                <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Catatan Tambahan</label>
+                                <div class="col-sm-12">
+                                    <textarea class="form-control" id="perihal" name="perihal" rows="4"></textarea>
+                                </div>
+                                </div>
+                                <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Catatan Penyelesaian</label>
+                                <div class="col-sm-12">
+                                    <textarea class="form-control" id="perihal" name="perihal" rows="4"></textarea>
+                                </div>
+                                </div>
+
+                                <div>
+                                <?php echo form_error('sifat_surat', '<div class="text-small text-danger"></div>') ?>
+                                </div> <br>
+                                
+                                <button type="submit" class="btn btn-success">Simpan</a></button>&nbsp &nbsp
+                                <!-- <button type="reset" class="btn btn-secondary">Reset</a></button>&nbsp &nbsp -->
+                                <a href="<?php echo base_url() ?>suratmasuk" class="btn btn-warning" >Kembali</a>
+                                <!-- </?php echo form_close(); ?>   -->
 
 
-                            <button type="submit" class="btn btn-success">Simpan</a></button>&nbsp &nbsp
-                            <!-- <button type="reset" class="btn btn-secondary">Reset</a></button>&nbsp &nbsp -->
-                            <a href="<?php echo base_url() ?>suratmasuk" class="btn btn-warning" >Kembali</a>
-                            <!-- </?php echo form_close(); ?>   -->
                         </div>
                     </div>
                     </div>

@@ -19,6 +19,7 @@ class Riwayatdisposisi extends CI_Controller {
     
     function tambah($id_suratmasuk)
 	{
+        $data['data_pegawai'] = $this->Riwayatdisposisi_m->get('data_pegawai');
         $data['riwayatdisposisi'] = $this->Riwayatdisposisi_m->get('riwayat_disposisi');
         $data['sifatsurat'] = $this->Riwayatdisposisi_m->get('sifat_surat');
         $data['suratmasuk'] = $this->Riwayatdisposisi_m->get('surat_masuk', ['id_suratmasuk' => $id_suratmasuk]);
@@ -29,43 +30,50 @@ class Riwayatdisposisi extends CI_Controller {
         
         $this->form_validation->set_rules('kepada', 'Diteruskan Kepada', 'required');
         $this->form_validation->set_rules('isi', 'Isi', 'required');
-        $this->form_validation->set_rules('catatan', 'Catatan', 'required');
 
-        if ($this->form_validation->run() == false){
-            $data['title'] = 'Tambah Surat Masuk | Disposisi';
-            $this->load->view('template/template', $data);
-            $this->load->view('RiwayatDisposisi/v_tambahdisposisi', $data);
-            $this->load->view('template/footer', $data);
-        } else {
-            $dokumen = $_FILES['dokumen']['name'];
-            if ($dokumen) {
-                $config['upload_path'] = './assets/file/suratmasuk';
-                $config['allowed_types'] = 'jepg|jpg|png|pdf|docx|zip';
-                $config['max_size']     = '30000';
-                $this->load->library('upload', $config);
-                if ($this->upload->do_upload('dokumen')) {
-                    $dokumen = $this->upload->data('file_name');
-                } else {
-                    echo "Unggah file gagal!";
-                }
-            } else {
-            }
+        $data['title'] = 'Tambah Surat Masuk | Disposisi';
+        $this->load->view('template/template', $data);
+        $this->load->view('RiwayatDisposisi/v_tambahdisposisi', $data);
+        $this->load->view('template/footer', $data);
+    }
+
+    public function tambah_aksi()
+    {
+        $id_riwayat = $this->input->post('id');
+        $ket = ['id_riwayat' => $id_riwayat];
+        $detail = $this->Riwayatdisposisi_m->detailupdate('riwayat_disposisi', $ket);
+        // $dokumen = $_FILES['dokumen']['name'];
+        //     if ($dokumen) {
+        //         $config['upload_path'] = './assets/file/suratmasuk';
+        //         $config['allowed_types'] = 'jepg|jpg|png|pdf|docx|zip';
+        //         $config['max_size']     = '30000';
+        //         $this->load->library('upload', $config);
+        //         if ($this->upload->do_upload('dokumen')) {
+        //             $dokumen = $this->upload->data('file_name');
+        //         } else {
+        //             echo "Unggah file gagal!";
+        //         }
+        //     } else {
+        //     }
             $data = [
-                'sifatsurat_id' => $this->input->post('sifatsurat_id'),
-                'kode' => $this->input->post('kode'),
-                'tanggal_surat' => $this->input->post('tanggal_surat'),
-                'tanggal_input' => $this->input->post('tanggal_input'),
-                'no_surat' => $this->input->post('no_surat'),
-                'no_urut' => $this->input->post('no_urut'),
-                'asal_surat' => $this->input->post('asal_surat'),
-                'dokumen' => $dokumen,
-                'perihal' => $this->input->post('perihal')
+                'nip' => $this->input->post('nip'),
+                'isi' =>  $this->input->post('isi'),
+                
+                // 'sifatsurat_id' => $this->input->post('sifatsurat_id'),
+                // 'kode' => $this->input->post('kode'),
+                // 'tanggal_surat' => $this->input->post('tanggal_surat'),
+                // 'tanggal_input' => $this->input->post('tanggal_input'),
+                // 'no_surat' => $this->input->post('no_surat'),
+                // 'no_urut' => $this->input->post('no_urut'),
+                // 'asal_surat' => $this->input->post('asal_surat'),
+                // 'dokumen' => $dokumen,
+                // 'perihal' => $this->input->post('perihal')
             ];
             // var_dump($data);
-            $this->Riwayatdisposisi_m->input_data($data, 'surat_masuk');
+            $this->Riwayatdisposisi_m->input_data($data, 'riwayat_disposisi');
             $this->session->set_flashdata('sukses', 'Surat Masuk Berhasil Ditambahkan');
             redirect('suratmasuk');
-        }
+        // }
     }
         
     private function _validasi()

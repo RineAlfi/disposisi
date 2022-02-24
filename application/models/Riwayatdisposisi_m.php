@@ -42,4 +42,10 @@ class Riwayatdisposisi_m extends CI_model
         $query = $this->db->get();
         return $query->row();
     }
+
+    public function detailupdate($table, $ket){
+        $query = $this->db->get_where($table, $ket)->row();
+        return $query;
+    }
+
 }
