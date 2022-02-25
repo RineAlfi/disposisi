@@ -17,7 +17,7 @@
                                 <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Sifat Surat</label>
                                 <div class="col-sm-9">
-                                    <select id="sifatsurat_id" name="sifatsurat_id" class="form-control" readonly required>
+                                    <select id="sifatsurat_id" name="sifatsurat_id" class="form-control" disabled required>
                                         <option value="" selected disabled>--Pilih Sifat Surat--</option>
                                         <?php foreach ($sifatsurat as $ss) : ?>
                                             <option <?php echo $suratmasuk['sifatsurat_id'] == $ss['id_sifatsurat'] ? 'selected' : '';?> <?php echo set_select('sifatsurat_id', $ss['id_sifatsurat']) ?> value="<?php echo $ss['id_sifatsurat'] ?>"><?php echo $ss['sifat_surat']?></option>
@@ -131,20 +131,20 @@
                                 </div>
                                 </div>
                                 <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Catatan Tambahan</label>
+                                <label class="col-sm-3 col-form-label">Catatan</label>
                                 <div class="col-sm-12">
-                                    <textarea class="form-control" id="perihal" name="perihal" rows="4"></textarea>
+                                    <textarea class="form-control" id="catatan" name="catatan" rows="4"></textarea>
                                 </div>
                                 </div>
                                 <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Catatan Penyelesaian</label>
+                                <label class="col-sm-3 col-form-label">Catatan Tambahan</label>
                                 <div class="col-sm-12">
-                                    <textarea class="form-control" id="perihal" name="perihal" rows="4"></textarea>
+                                    <textarea class="form-control" id="catatantam" name="catatantam" rows="4"></textarea>
                                 </div>
                                 </div>
 
                                 <div>
-                                <?php echo form_error('sifat_surat', '<div class="text-small text-danger"></div>') ?>
+                                <?php echo form_error('catatantam', '<div class="text-small text-danger"></div>') ?>
                                 </div> <br>
                                 
                                 <button type="submit" class="btn btn-success">Simpan</a></button>&nbsp &nbsp

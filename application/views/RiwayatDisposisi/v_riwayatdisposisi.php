@@ -20,12 +20,13 @@
                                         <th width='5px'>No</th>
                                         <!-- <th style= "text-align: center;">Sifat Surat</th> -->
                                         <!-- <th style= "text-align: center;">Kode/Indeks</th> -->
-                                        <th style= "text-align: center;">No. Surat</th>
-                                        <th style= "text-align: center;">Tanggal Surat</th>
-                                        <th style= "text-align: center;">Asal Surat</th>
-                                        <th style= "text-align: center;">Perihal/Isi Surat</th>
-                                        <th style= "text-align: center;">File Surat</th>
-                                        <th style= "text-align: center;">Status</th>
+                                        <th style= "text-align: center;">No Surat</th>
+                                        <th style= "text-align: center;">Disposisi Oleh</th>
+                                        <th style= "text-align: center;">Diteruskan Kepada</th>
+                                        <th style= "text-align: center;">Isi Disposisi</th>
+                                        <th style= "text-align: center;">Catatan</th>
+                                        <th style= "text-align: center;">Catatan Tambahan</th>
+                                        <!-- <th style= "text-align: center;">Status</th> -->
                                         <!-- <th style= "text-align: center;">Tanggal Input</th>
                                         <th style= "text-align: center;">No. Urut</th> -->
                                         <th style= "text-align: center;">Aksi</th>
@@ -40,17 +41,19 @@
                                             <tr>
                                                 <td style= "text-align: center;"><?php echo $no++; ?></td>
                                                 <!-- <td></?php echo $rd->sifat_surat; ?></td> -->
-                                                <td><?php echo $rd->no_surat; ?></td>
-                                                <td><?php echo $rd->tanggal_surat ?></td>
-                                                <td><?php echo $rd->asal_surat?></td>
-                                                <td><?php echo $rd->perihal ?></td>
-                                                <td><a class="btn btn-rd btn-outline-primary btn-icon-text" href="<?php echo base_url() ?>assets/file/suratmasuk/<?php echo $rd->dokumen ?>"><i class="ti ti-download"></i> Unduh</a></td>
-                                                <td><?php echo "tes" ?></td>
+                                                <td><?php echo $rd->no_surat ?></td>
+                                                <td><?php echo 'user' ?></td>
+                                                <!-- <td></?php echo $rd->nip; ?></td> -->
+                                                <td><?php echo $rd->nip; ?></td>
+                                                <td><?php echo $rd->isi?></td>
+                                                <td><?php echo $rd->catatan?></td>
+                                                <td><?php echo $rd->catatantam?></td>
+                                                <!-- <td><a class="btn btn-rd btn-outline-primary btn-icon-text" href="</?php echo base_url() ?>assets/file/suratmasuk/<?php echo $rd->dokumen ?>"><i class="ti ti-download"></i> Unduh</a></td> -->
+                
                                              <td>
-                                                <a class="btn btn-rd btn-warning" href="<?php echo base_url('/suratmasuk/detail/' . $rd->id_suratmasuk) ?>"><i class="ti ti-eye"></i></a>
-                                                <a class="btn btn-rd btn-success" href="<?php echo base_url('/suratmasuk/edit/' . $rd->id_suratmasuk) ?>"><i class="ti ti-pencil"></i></a>
-                                                <a onclick="return confirm('Yakin hapus data ini?')" class="btn btn-rd btn-danger" href="<?php echo site_url('/suratmasuk/hapus/' . $rd->id_suratmasuk) ?>"><i class="ti ti-trash"></i></a>
-                                                <a class="btn btn-rd btn-info" href="<?php echo base_url('/riwayatdisposisi/tambah/' . $rd->id_suratmasuk) ?>">Disposisi</a>
+                                                <a class="btn btn-rd btn-warning" href="<?php echo base_url('/riwayatdisposisi/detail/' . $rd->id_riwayat) ?>"><i class="ti ti-eye"></i></a>
+                                                <a class="btn btn-rd btn-success" href="<?php echo base_url('/riwayatdisposisi/edit/' . $rd->id_riwayat) ?>"><i class="ti ti-pencil"></i></a>
+                                                <a onclick="return confirm('Yakin hapus data ini?')" class="btn btn-rd btn-danger" href="<?php echo site_url('/riwayatdisposisi/hapus/' . $rd->id_riwayat) ?>"><i class="ti ti-trash"></i></a>
                                             </td>
                                             </tr>
                                         <?php } ?>

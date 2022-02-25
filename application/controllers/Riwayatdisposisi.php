@@ -11,6 +11,7 @@ class Riwayatdisposisi extends CI_Controller {
     function index()
     {
         $data['riwayatdisposisi'] = $this->Riwayatdisposisi_m->tampil_data('riwayat_disposisi')->result();
+        // $data['riwayatdisposisi'] = $this->Riwayatdisposisi_m->get('riwayat_disposisi');
         $data['title'] = "Surat Masuk | Disposisi";
         $this->load->view('template/template',$data);
 		$this->load->view('RiwayatDisposisi/v_riwayatdisposisi',$data);
@@ -39,7 +40,7 @@ class Riwayatdisposisi extends CI_Controller {
 
     public function tambah_aksi()
     {
-        $id_riwayat = $this->input->post('id');
+        $id_riwayat = $this->input->post('id_riwayat');
         $ket = ['id_riwayat' => $id_riwayat];
         $detail = $this->Riwayatdisposisi_m->detailupdate('riwayat_disposisi', $ket);
         // $dokumen = $_FILES['dokumen']['name'];
@@ -58,6 +59,8 @@ class Riwayatdisposisi extends CI_Controller {
             $data = [
                 'nip' => $this->input->post('nip'),
                 'isi' =>  $this->input->post('isi'),
+                'catatan' => $this->input->post('catatan'),
+                'catatantam' => $this->input->post('catatantam'),
                 
                 // 'sifatsurat_id' => $this->input->post('sifatsurat_id'),
                 // 'kode' => $this->input->post('kode'),
@@ -69,10 +72,10 @@ class Riwayatdisposisi extends CI_Controller {
                 // 'dokumen' => $dokumen,
                 // 'perihal' => $this->input->post('perihal')
             ];
-            // var_dump($data);
-            $this->Riwayatdisposisi_m->input_data($data, 'riwayat_disposisi');
-            $this->session->set_flashdata('sukses', 'Surat Masuk Berhasil Ditambahkan');
-            redirect('suratmasuk');
+            var_dump($data);
+            // $this->Riwayatdisposisi_m->input_data($data, 'riwayat_disposisi');
+            // $this->session->set_flashdata('sukses', 'Disposisi Berhasil Ditambahkan');
+            // redirect('riwayatdisposisi');
         // }
     }
         
