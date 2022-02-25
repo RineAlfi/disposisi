@@ -25,7 +25,7 @@
                                         <th style= "text-align: center;">Diteruskan Kepada</th>
                                         <th style= "text-align: center;">Isi Disposisi</th>
                                         <th style= "text-align: center;">Catatan</th>
-                                        <th style= "text-align: center;">Catatan Tambahan</th>
+                                        <!-- <th style= "text-align: center;">Catatan Tambahan</th> -->
                                         <!-- <th style= "text-align: center;">Status</th> -->
                                         <!-- <th style= "text-align: center;">Tanggal Input</th>
                                         <th style= "text-align: center;">No. Urut</th> -->
@@ -47,7 +47,7 @@
                                                 <td><?php echo $rd->nip; ?></td>
                                                 <td><?php echo $rd->isi?></td>
                                                 <td><?php echo $rd->catatan?></td>
-                                                <td><?php echo $rd->catatantam?></td>
+                                                <!-- <td></?php echo $rd->catatantam?></td> -->
                                                 <!-- <td><a class="btn btn-rd btn-outline-primary btn-icon-text" href="</?php echo base_url() ?>assets/file/suratmasuk/<?php echo $rd->dokumen ?>"><i class="ti ti-download"></i> Unduh</a></td> -->
                 
                                              <td>

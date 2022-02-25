@@ -136,12 +136,12 @@
                                     <textarea class="form-control" id="catatan" name="catatan" rows="4"></textarea>
                                 </div>
                                 </div>
-                                <div class="form-group row">
+                                <!-- <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Catatan Tambahan</label>
                                 <div class="col-sm-12">
                                     <textarea class="form-control" id="catatantam" name="catatantam" rows="4"></textarea>
                                 </div>
-                                </div>
+                                </div> -->
 
                                 <div>
                                 <?php echo form_error('catatantam', '<div class="text-small text-danger"></div>') ?>
