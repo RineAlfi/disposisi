@@ -6,26 +6,26 @@
                     <div class="card-header py-3">
                     <div class="table-responsive">
                     <h3 class="m-0 font-weight-bold text-primary">Data Pegawai</h3><br>
-                    <div class="col-md-4 grid-margin">
-                    <a href="<?php echo base_url() ?>data_pegawai/tambah" class="btn btn-success btn-md"><i class="ti ti-plus"></i>Tambah Pegawai</a></div>
+                    <div class="col-md-4 grid-margin mb-3">
+                    <a href="<?php echo base_url() ?>data_pegawai/tambah" class="btn btn-success btn-sm"><i class="ti ti-plus"></i>Tambah Pegawai</a></div>
                     <div class="col-md-12 grid-margin">
                         <div class="card shadow mb-12">
                             <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
-                                <div class="card-body">
-                                <div class="table-responsive pt-8 ">
-                                <table id="dtBasicExample" class="table table-striped table-bordered table-md" cellspacing="0" width='50px'>
+                                <!-- <div class="card-body"> -->
+                                <!-- <div class="table-responsive pt-8 "> -->
+                                <table id="dataTable" class="table table-striped table-bordered table-md" style="width:100%">
                                     <!-- <table  id="dtBasicExample" class="table table-striped table-bordered table-md" cellspacing="0" height='50%'> -->
                                     <thead  class="thead-light">
                                         <tr>
-                                        <th width='30%'>No</th>
-                                        <th class="th-sm">Nama Pegawai</th>
-                                        <th class="th-sm">NIP</th>
+                                        <th width='5px'>No</th>
+                                        <th style= "text-align: center;">Nama Pegawai</th>
+                                        <th style= "text-align: center;">NIP</th>
                                         <!-- <th>Pangkat</th> -->
                                         <!-- <th class="th-sm">Foto</th> -->
-                                        <th class="th-sm">Jabatan</th>
+                                        <th style= "text-align: center;">Jabatan</th>
                                         <!-- <th>Role</th> -->
-                                        <th class="th-sm">Aksi</th>
+                                        <th style= "text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>

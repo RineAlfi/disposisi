@@ -310,12 +310,25 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?=base_url()?>riwayatdisposisi">
+                    <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+                    <i class="ti ti-history" style="font-size: 22px; margin-right: 8px;"></i>
+                    <span class="menu-title">Riwayat Surat</span>
+                    <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="form-elements">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"><a class="nav-link" href="<?=base_url()?>riwayatdisposisi">Riwayat Disposisi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?=base_url()?>riwayatsurat">Riwayat Surat</a></li>
+                    </ul>
+                    </div>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="</?=base_url()?>riwayatdisposisi">
                     <i class="ti ti-history" style="font-size: 22px; margin-right: 8px;"></i>
                     <span class="menu-title">Riwayat Disposisi</span>
                     </a>
                 </li>
-                </ul>
+                </ul> -->
          </nav>
 </body>
 

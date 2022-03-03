@@ -32,9 +32,19 @@ class Riwayatdisposisi_m extends CI_model
         }
     }
 
+    public function detail_data($suratmasuk_id)
+    {
+        $this->db->select('*');
+        $this->db->from('riwayat_disposisi');
+        $this->db->join('surat_masuk', 'surat_masuk.id_suratmasuk = riwayat_disposisi.suratmasuk_id', 'left');
+        $this->db->join('data_pegawai', 'data_pegawai.nip = riwayat_disposisi.nip', 'left');
+        $this->db->where('riwayat_disposisi.id_riwayat', $suratmasuk_id);
+        $query = $this->db->get();
+        return $query->row();
+	}
+
     function join2($table, $table2, $ktabel21, $ket, $param)
     {
-
         $this->db->select('*');
         $this->db->from($table);
         $this->db->join($table2, $ktabel21, 'left');
@@ -43,9 +53,41 @@ class Riwayatdisposisi_m extends CI_model
         return $query->row();
     }
 
+    function join3($table, $table2, $table3, $ktabel21, $ktable31, $ket)
+    {
+        $this->db->select('*');
+        $this->db->from($table);
+        $this->db->join($table2, $ktabel21, 'left');
+        $this->db->join($table3, $ktable31, 'left');
+        $this->db->where($ket);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function detailupdate($table, $ket){
         $query = $this->db->get_where($table, $ket)->row();
         return $query;
+    }
+
+    // public function join2inner()
+    // {
+    //     $this->db->select('*');
+    //     $this->db->from('riwayat_disposisi');
+    //     $this->db->join('data_pegawai', 'data_pegawai.nip = riwayat_disposisi.nip', 'inner');
+    //     // $this->db->where($ket, $param);
+    //     $query = $this->db->get();
+    //     return $query->result();
+    // }
+
+    public function join3inner()
+    {
+        $this->db->select('*');
+        $this->db->from('riwayat_disposisi');
+        $this->db->join('surat_masuk', 'surat_masuk.id_suratmasuk = riwayat_disposisi.suratmasuk_id', 'inner');
+        $this->db->join('data_pegawai', 'data_pegawai.nip = riwayat_disposisi.nip', 'inner');
+        // $this->db->where($ket, $param);
+        $query = $this->db->get();
+        return $query->result();
     }
 
 }

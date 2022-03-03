@@ -6,15 +6,15 @@
                     <div class="card-header py-3">
                     <h3 class="m-0 font-weight-bold">Data Sifat Surat</h3><br>
                     <div class="flash-data" id="flash2" data-flash="<?= $this->session->flashdata('sukses'); ?>"></div>
-                    <div class="col-md-4 grid-margin">
-                    <a href="<?php echo base_url() ?>sifatsurat/tambah" class="btn btn-success btn-md"><i class="ti ti-plus"></i> Tambah Sifat Surat</a></div>
+                    <div class="col-md-4 grid-margin mb-3">
+                    <a href="<?php echo base_url() ?>sifatsurat/tambah" class="btn btn-success btn-sm"><i class="ti ti-plus"></i> Tambah Sifat Surat</a></div>
                     <div class="col-md-12 grid-margin">
                         <div class="card shadow mb-12">
                             <div class="col-sm-12 grid-margin stretch-card">
                             <div class="card">
                                 <!-- <div class="card-body"> -->
-                                <div class="table-responsive pt-3 ">
-                                <table id="dtBasicExample" class="table table-striped table-bordered table-md" cellspacing="0" height='50%'>
+                                <!-- <div class="table-responsive pt-3 "> -->
+                                <table id="dataTable" class="table table-striped table-bordered table-md" style="width:100%">
                                     <thead  class="thead-light">
                                         <tr>
                                         <th width='5px'>No</th>

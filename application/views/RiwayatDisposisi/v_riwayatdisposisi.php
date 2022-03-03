@@ -14,7 +14,7 @@
                             <div class="card">
                                 <div class="card-body">
                                 <div class="table-responsive pt-3 ">
-                                <table id="dtBasicExample" class="table table-striped table-bordered table-md" cellspacing="0" height='50%'>
+                                <table id="dataTable" class="table table-striped table-bordered table-md" style="width:100%">
                                 <thead  class="thead-light">
                                         <tr>
                                         <th width='5px'>No</th>
@@ -23,8 +23,8 @@
                                         <th style= "text-align: center;">No Surat</th>
                                         <th style= "text-align: center;">Disposisi Oleh</th>
                                         <th style= "text-align: center;">Diteruskan Kepada</th>
-                                        <th style= "text-align: center;">Isi Disposisi</th>
-                                        <th style= "text-align: center;">Catatan</th>
+                                        <!-- <th style= "text-align: center;">Isi Disposisi</th> -->
+                                        <!-- <th style= "text-align: center;">Catatan</th> -->
                                         <!-- <th style= "text-align: center;">Catatan Tambahan</th> -->
                                         <!-- <th style= "text-align: center;">Status</th> -->
                                         <!-- <th style= "text-align: center;">Tanggal Input</th>
@@ -44,9 +44,9 @@
                                                 <td><?php echo $rd->no_surat ?></td>
                                                 <td><?php echo 'user' ?></td>
                                                 <!-- <td></?php echo $rd->nip; ?></td> -->
-                                                <td><?php echo $rd->nip; ?></td>
-                                                <td><?php echo $rd->isi?></td>
-                                                <td><?php echo $rd->catatan?></td>
+                                                <td><?php echo $rd->nama_pegawai; ?></td>
+                                                <!-- <td></?php echo $rd->isi?></td> -->
+                                                <!-- <td></?php echo $rd->catatan?></td> -->
                                                 <!-- <td></?php echo $rd->catatantam?></td> -->
                                                 <!-- <td><a class="btn btn-rd btn-outline-primary btn-icon-text" href="</?php echo base_url() ?>assets/file/suratmasuk/<?php echo $rd->dokumen ?>"><i class="ti ti-download"></i> Unduh</a></td> -->
                 

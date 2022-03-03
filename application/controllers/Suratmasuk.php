@@ -135,7 +135,7 @@ class SuratMasuk extends CI_Controller {
         $sifatsurat_id = $detail->sifatsurat_id;
         // var_dump( $data['detail']);
         // $data['suratmasuk'] = $this->Suratmasuk_m->get('surat_masuk', ['id_suratmasuk' => $id_suratmasuk]);
-        $data['title'] = 'Edit Surat Masuk | Disposisi';
+        $data['title'] = 'Detail Surat Masuk | Disposisi';
         $this->load->view('template/template', $data);
         $this->load->view('Suratmasuk/v_detailsuratmasuk', $data);
         $this->load->view('template/footer', $data);

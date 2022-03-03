@@ -10,8 +10,15 @@ class Riwayatdisposisi extends CI_Controller {
     }
     function index()
     {
-        $data['riwayatdisposisi'] = $this->Riwayatdisposisi_m->tampil_data('riwayat_disposisi')->result();
+        // $data['riwayatdisposisi'] = $this->Riwayatdisposisi_m->tampil_data('riwayat_disposisi')->result(); 
+        $data['riwayatdisposisi'] = $this->Riwayatdisposisi_m->join3inner();
+        // $ket1 = 'surat_masuk.id_suratmasuk = riwayat_disposisi.suratmasuk_id';
+        // $ket2 = 'data_pegawai.nip = riwayat_disposisi.nip';
+        // $ket3 = 'riwayat_disposisi.id_riwayat';
+        // $detailsurat = $this->Riwayatdisposisi_m->join3('riwayat_disposisi', 'surat_masuk', 'data_pegawai', $ket1, $ket2, $ket3);
+        // $data['riwayatdisposisi'] = $detailsurat;
         // $data['riwayatdisposisi'] = $this->Riwayatdisposisi_m->get('riwayat_disposisi');
+        // var_dump($data['riwayatdisposisi']);
         $data['title'] = "Surat Masuk | Disposisi";
         $this->load->view('template/template',$data);
 		$this->load->view('RiwayatDisposisi/v_riwayatdisposisi',$data);
@@ -31,8 +38,8 @@ class Riwayatdisposisi extends CI_Controller {
         
         $this->form_validation->set_rules('kepada', 'Diteruskan Kepada', 'required');
         $this->form_validation->set_rules('isi', 'Isi', 'required');
-
-        $data['title'] = 'Tambah Surat Masuk | Disposisi';
+        // var_dump($data['data_pegawai']);
+        $data['title'] = 'Tambah Disposisi Surat | Disposisi';
         $this->load->view('template/template', $data);
         $this->load->view('RiwayatDisposisi/v_tambahdisposisi', $data);
         $this->load->view('template/footer', $data);
@@ -42,25 +49,13 @@ class Riwayatdisposisi extends CI_Controller {
     {
         $id_riwayat = $this->input->post('id_riwayat');
         $ket = ['id_riwayat' => $id_riwayat];
-        $detail = $this->Riwayatdisposisi_m->detailupdate('riwayat_disposisi', $ket);
-        // $dokumen = $_FILES['dokumen']['name'];
-        //     if ($dokumen) {
-        //         $config['upload_path'] = './assets/file/suratmasuk';
-        //         $config['allowed_types'] = 'jepg|jpg|png|pdf|docx|zip';
-        //         $config['max_size']     = '30000';
-        //         $this->load->library('upload', $config);
-        //         if ($this->upload->do_upload('dokumen')) {
-        //             $dokumen = $this->upload->data('file_name');
-        //         } else {
-        //             echo "Unggah file gagal!";
-        //         }
-        //     } else {
-        //     }
+        // $detail = $this->Riwayatdisposisi_m->detailupdate('riwayat_disposisi', $ket);
             $data = [
-                'nip' => $this->input->post('nip'),
+                'suratmasuk_id'=> $this->input->post('id'),
                 'isi' =>  $this->input->post('isi'),
                 'catatan' => $this->input->post('catatan'),
-                'catatantam' => $this->input->post('catatantam'),
+                'nip' => $this->input->post('nip'),
+                // 'catatantam' => $this->input->post('nip'),
                 
                 // 'sifatsurat_id' => $this->input->post('sifatsurat_id'),
                 // 'kode' => $this->input->post('kode'),
@@ -72,12 +67,13 @@ class Riwayatdisposisi extends CI_Controller {
                 // 'dokumen' => $dokumen,
                 // 'perihal' => $this->input->post('perihal')
             ];
-            var_dump($data);
-            // $this->Riwayatdisposisi_m->input_data($data, 'riwayat_disposisi');
-            // $this->session->set_flashdata('sukses', 'Disposisi Berhasil Ditambahkan');
-            // redirect('riwayatdisposisi');
+            // var_dump($data);
+            $this->Riwayatdisposisi_m->input_data($data, 'riwayat_disposisi');
+            $this->session->set_flashdata('sukses', 'Disposisi Berhasil Ditambahkan');
+            redirect('riwayatdisposisi');
         // }
     }
+
         
     private function _validasi()
     {
@@ -145,12 +141,14 @@ class Riwayatdisposisi extends CI_Controller {
     {
         $detail = $this->Riwayatdisposisi_m->detail_data($id_suratmasuk);
         $data['detail'] = $detail;
-        $sifatsurat_id = $detail->sifatsurat_id;
-        // var_dump( $data['detail']);
+        // $detailsurat = $this->Riwayatdisposisi_m->join3inner();
+        // $data['detailsurat'] = $detailsurat;
+        // $sifatsurat_id = $detail->sifatsurat_id;
+        // var_dump($data['detail']);
         // $data['suratmasuk'] = $this->Riwayatdisposisi_m->get('surat_masuk', ['id_suratmasuk' => $id_suratmasuk]);
-        $data['title'] = 'Edit Surat Masuk | Disposisi';
+        $data['title'] = 'Detail Surat Disposisi | Disposisi';
         $this->load->view('template/template', $data);
-        $this->load->view('Suratmasuk/v_detailsuratmasuk', $data);
+        $this->load->view('Riwayatdisposisi/v_detaildisposisi', $data);
         $this->load->view('template/footer', $data);
     }
 

@@ -10,6 +10,9 @@
                     <?php echo form_open_multipart('riwayatdisposisi/tambah_aksi');?>
                     <div class="col-12 grid-margin">
                     <div class="card">
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="<?= $suratmasuk['id_suratmasuk']; ?>">
+                    </div>
                         <div class="card-body">
                         <h4 class="card-title">Surat Masuk</h4><br>
                             <div class="row">
@@ -141,11 +144,11 @@
                                 <div class="col-sm-12">
                                     <textarea class="form-control" id="catatantam" name="catatantam" rows="4"></textarea>
                                 </div>
-                                </div> -->
+                                </div>
 
                                 <div>
-                                <?php echo form_error('catatantam', '<div class="text-small text-danger"></div>') ?>
-                                </div> <br>
+                                </?php echo form_error('catatantam', '<div class="text-small text-danger"></div>') ?>
+                                </div> <br> -->
                                 
                                 <button type="submit" class="btn btn-success">Simpan</a></button>&nbsp &nbsp
                                 <!-- <button type="reset" class="btn btn-secondary">Reset</a></button>&nbsp &nbsp -->
