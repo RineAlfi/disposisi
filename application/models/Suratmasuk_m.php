@@ -57,4 +57,31 @@ class Suratmasuk_m extends CI_model
         $query = $this->db->get();
         return $query->row();
 	}
+
+	public function idsm()
+    {
+        $sql = "SELECT MAX(MID(id_suratmasuk,7,2)) AS nosurat FROM surat_masuk
+                WHERE MID(id_suratmasuk,3,4) = DATE_FORMAT(CURDATE(), '%y%m')";
+        $query = $this->db->query($sql);
+        if ($query->num_rows() > 0) {
+            $row = $query->row();
+            $nom = ((int)$row->nosurat) + 1;
+            $no = sprintf("%'.02d", $nom);
+        } else {
+            $no = "01";
+        }
+        $id_suratmasuk = "SM" .date('ym') . $no;
+        return $id_suratmasuk;
+    }
+
+	function join2inner($ket, $param)
+    {
+        $this->db->select('*');
+        $this->db->from('surat_masuk');
+        $this->db->join('data_pegawai', 'data_pegawai.nip = surat_masuk.status', 'inner');
+        $this->db->where($ket, $param);
+        $query = $this->db->get();
+        return $query->row();
+    }
+
 }

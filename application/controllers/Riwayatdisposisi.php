@@ -49,6 +49,8 @@ class Riwayatdisposisi extends CI_Controller {
     {
         $id_riwayat = $this->input->post('id_riwayat');
         $ket = ['id_riwayat' => $id_riwayat];
+        $id_suratmasuk = $this->input->post('id');
+        $ket2 = ['id_suratmasuk' => $id_suratmasuk];
         // $detail = $this->Riwayatdisposisi_m->detailupdate('riwayat_disposisi', $ket);
             $data = [
                 'suratmasuk_id'=> $this->input->post('id'),
@@ -67,8 +69,12 @@ class Riwayatdisposisi extends CI_Controller {
                 // 'dokumen' => $dokumen,
                 // 'perihal' => $this->input->post('perihal')
             ];
+            $data2=[
+                'status' => $this->input->post('nip'),
+            ];
             // var_dump($data);
             $this->Riwayatdisposisi_m->input_data($data, 'riwayat_disposisi');
+            $this->Riwayatdisposisi_m->update_data($ket2, $data2, 'surat_masuk');
             $this->session->set_flashdata('sukses', 'Disposisi Berhasil Ditambahkan');
             redirect('riwayatdisposisi');
         // }

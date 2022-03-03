@@ -10,7 +10,7 @@
                             <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
                             <!-- <div class="text-center">
-                                <img src="</?php echo base_url() ?>assets/file/barangmasuk/</?php echo $datapeg->foto ?>" alt="" class="img-thumbnail" style="height: 210px; width:200px">
+                                <img src="</?php echo base_url() ?>assets/file/barangmasuk/</?php echo $detail->foto ?>" alt="" class="img-thumbnail" style="height: 210px; width:200px">
                             </div><br> -->
                             <div class="col-lg-12 col-md-12 col-xs-9">
                             <table class="table table-no-bordered">
@@ -20,47 +20,38 @@
                                 </tr>
                                 <tr>
                                     <th>Kode/Indeks</th>
-                                    <td><?php echo $datapeg->kode?></td>
+                                    <td><?php echo $detail->kode?></td>
                                 </tr>
                                 <tr>
                                     <th>Tanggal Input</th>
-                                    <td><?php echo $datapeg->tanggal_input?></td>
+                                    <td><?php echo $detail->tanggal_input?></td>
                                 </tr>
                                 <tr>
                                     <th>No Urut</th>
-                                    <td><?php echo $datapeg->no_urut?></td>
+                                    <td><?php echo $detail->no_urut?></td>
                                 </tr>
                                 <tr>
                                     <th>Tanggal Surat</th>
-                                    <td><?php echo $datapeg->tanggal_surat?></td>
+                                    <td><?php echo $detail->tanggal_surat?></td>
                                 </tr>
                                 <tr>
                                     <th>No Surat</th>
-                                    <td><?php echo $datapeg->no_surat?></td>
+                                    <td><?php echo $detail->no_surat?></td>
                                 </tr>
                                 <tr>
                                     <th>Asal Surat</th>
-                                    <td><?php echo $datapeg->asal_surat?></td>
+                                    <td><?php echo $detail->asal_surat?></td>
                                 </tr>
                                 <tr>
                                     <th>Perihal/Isi Surat</th>
-                                    <td><?php echo $datapeg->perihal?></td>
-                                </tr>
-                                <tr>
-                                    <th>Status</th>
-                                    <td><?php
-                                        if ($datapeg->status == 'Belum Disposisi') { ?>
-                                            <a class="badge badge-warning">Belum Disposisi</a>
-                                        <?php } else { ?>
-                                            <a class="badge badge-success">Diteruskan Ke <?= $datapeg->nama_pegawai?></a>
-                                        <?php } ?></td>
+                                    <td><?php echo $detail->perihal?></td>
                                 </tr>
                                 <tr>
                                     <th>File Surat</th>
-                                    <td><a class="btn btn-sm btn-outline-primary btn-icon-text" href="<?php echo base_url() ?>assets/file/suratmasuk/<?php echo $datapeg->dokumen ?>"><i class="ti ti-download"></i> <?php echo $datapeg->dokumen?></a></td>
+                                    <td><a class="btn btn-sm btn-outline-primary btn-icon-text" href="<?php echo base_url() ?>assets/file/suratmasuk/<?php echo $detail->dokumen ?>"><i class="ti ti-download"></i> <?php echo $detail->dokumen?></a></td>
                                 </tr>
                             </table>
-                            <a href="<?php echo base_url() ?>suratmasuk" class="btn btn-warning float-right" >Kembali</a>
+                            <a href="<?php echo base_url() ?>riwayatsurat" class="btn btn-warning float-right" >Kembali</a>
                             </div>
                         </div>
                     </div>

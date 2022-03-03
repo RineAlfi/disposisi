@@ -68,14 +68,24 @@ class Riwayatsurat_m extends CI_model
         return $query->result();
     }
 
-	public function join3inner()
+    function join2()
     {
         $this->db->select('*');
-        $this->db->from('riwayat_disposisi');
-        $this->db->join('surat_masuk', 'surat_masuk.id_suratmasuk = riwayat_disposisi.suratmasuk_id', 'inner');
-        // $this->db->join('data_pegawai', 'data_pegawai.nip = riwayat_disposisi.nip', 'inner');
-        // $this->db->where($ket, $param);
+        $this->db->from('surat_masuk');
+        $this->db->join('data_pegawai', 'data_pegawai.nip = surat_masuk.status', 'inner');
+        // $this->db->where($ket);
         $query = $this->db->get();
         return $query->result();
     }
+
+	// public function join3inner()
+    // {
+    //     $this->db->select('*');
+    //     $this->db->from('riwayat_disposisi');
+    //     $this->db->join('surat_masuk', 'surat_masuk.id_suratmasuk = riwayat_disposisi.suratmasuk_id', 'inner');
+    //     // $this->db->join('data_pegawai', 'data_pegawai.nip = riwayat_disposisi.nip', 'inner');
+    //     // $this->db->where($ket, $param);
+    //     $query = $this->db->get();
+    //     return $query->result();
+    // }
 }

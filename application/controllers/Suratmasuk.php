@@ -11,6 +11,7 @@ class SuratMasuk extends CI_Controller {
     function index()
     {
         $data['suratmasuk'] = $this->Suratmasuk_m->tampil_data('surat_masuk')->result();
+        // $data['suratmasuk'] = $this->Suratmasuk_m->join2inner();
         $data['title'] = "Surat Masuk | Disposisi";
         $this->load->view('template/template',$data);
 		$this->load->view('SuratMasuk/v_suratmasuk',$data);
@@ -48,7 +49,9 @@ class SuratMasuk extends CI_Controller {
                 }
             } else {
             }
+            $id = $this->Suratmasuk_m->idsm();
             $data = [
+                'id_suratmasuk' => $id,
                 'sifatsurat_id' => $this->input->post('sifatsurat_id'),
                 'kode' => $this->input->post('kode'),
                 'tanggal_surat' => $this->input->post('tanggal_surat'),
@@ -57,10 +60,15 @@ class SuratMasuk extends CI_Controller {
                 'no_urut' => $this->input->post('no_urut'),
                 'asal_surat' => $this->input->post('asal_surat'),
                 'dokumen' => $dokumen,
-                'perihal' => $this->input->post('perihal')
+                'perihal' => $this->input->post('perihal'),
+                'status' => 'Belum Disposisi'
             ];
-            // var_dump($data);
             $this->Suratmasuk_m->input_data($data, 'surat_masuk');
+            $data2 = [
+                'suratmasuk_id' => $id,
+            ];
+            // var_dump($id);
+            $this->Suratmasuk_m->input_data($data2, 'riwayat_surat');
             $this->session->set_flashdata('sukses', 'Surat Masuk Berhasil Ditambahkan');
             redirect('suratmasuk');
         }
@@ -133,8 +141,10 @@ class SuratMasuk extends CI_Controller {
         $detail = $this->Suratmasuk_m->detail_data($id_suratmasuk);
         $data['detail'] = $detail;
         $sifatsurat_id = $detail->sifatsurat_id;
-        // var_dump( $data['detail']);
-        // $data['suratmasuk'] = $this->Suratmasuk_m->get('surat_masuk', ['id_suratmasuk' => $id_suratmasuk]);
+        $ket = ['id_suratmasuk' => $id_suratmasuk];
+        $data['datapeg'] = $this->Suratmasuk_m->join2inner($ket, $id_suratmasuk);
+        // var_dump( $data['datapeg']);
+        $data['suratmasuk'] = $this->Suratmasuk_m->get('surat_masuk', ['id_suratmasuk' => $id_suratmasuk]);
         $data['title'] = 'Detail Surat Masuk | Disposisi';
         $this->load->view('template/template', $data);
         $this->load->view('Suratmasuk/v_detailsuratmasuk', $data);
