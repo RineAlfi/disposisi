@@ -4,10 +4,10 @@
             <div class="col-md-12 grid-margin">
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                    <h3 class="m-0 font-weight-bold">Data Surat Masuk</h3><br>
+                    <h3 class="m-0 font-weight-bold">Riwayat Surat Masuk</h3><br>
                     <div class="flash-data" id="flash2" data-flash="<?= $this->session->flashdata('sukses'); ?>"></div>
                     <div class="col-md-4 grid-margin mb-3">
-                    <a href="<?php echo base_url() ?>suratmasuk/tambah" class="btn btn-success btn-sm"><i class="ti ti-plus"></i> Tambah Surat Masuk</a></div>
+                    </div>
                     <div class="col-md-12 grid-margin">
                         <div class="card shadow mb-12">
                             <div class="col-sm-12 grid-margin stretch-card">
@@ -49,11 +49,11 @@
                                                
 
                                              <td>
-                                                <a class="btn btn-sm btn-info" href="<?php echo base_url('/riwayatdisposisi/tambah/' . $sm->id_suratmasuk) ?>">Disposisi</a>
+                                                <!-- <a class="btn btn-sm btn-info" href="<?php echo base_url('/riwayatdisposisi/tambah/' . $sm->id_suratmasuk) ?>">Disposisi</a> -->
                                                 <a class="btn btn-sm btn-warning" href="<?php echo base_url('/suratmasuk/detail/' . $sm->id_suratmasuk) ?>"><i class="ti ti-eye"></i></a>
-                                                <a class="btn btn-sm btn-success" href="<?php echo base_url('/suratmasuk/edit/' . $sm->id_suratmasuk) ?>"><i class="ti ti-pencil"></i></a>
+                                                <!-- <a class="btn btn-sm btn-success" href="<?php echo base_url('/suratmasuk/edit/' . $sm->id_suratmasuk) ?>"><i class="ti ti-pencil"></i></a> -->
                                                 <a onclick="return confirm('Yakin hapus data ini?')" id="hapusmasuk" class="btn btn-sm btn-danger" href="<?php echo site_url('/suratmasuk/hapus/' . $sm->id_suratmasuk) ?>"><i class="ti ti-trash"></i></a>
-                                                <a class="btn btn-sm btn-secondary" href="<?php echo base_url('/suratmasuk/edit/' . $sm->id_suratmasuk) ?>"><i class="ti ti-printer"></i></a>
+                                                <!-- <a class="btn btn-sm btn-secondary" href="<?php echo base_url('/suratmasuk/edit/' . $sm->id_suratmasuk) ?>"><i class="ti ti-printer"></i></a> -->
                                             </td>
                                             </tr>
                                         <?php } ?>

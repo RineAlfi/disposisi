@@ -39,7 +39,7 @@
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center" style="padding: 0 0 0 5px;">
-                <a class="navbar-brand brand-logo mr-5" href="<?php echo base_url(); ?>dashboard"><img src="<?= base_url('assets'); ?>/images/logodiseminasi.png" /></a>
+                <a class="navbar-brand brand-logo mr-5" href="<?php echo base_url(); ?>dashboard"><img src="<?= base_url('assets'); ?>/images/logodisposisi.png" /></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                 <ul class="navbar-nav navbar-nav-right">
@@ -54,10 +54,10 @@
                         </div>
                     </li> -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                        <!-- <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
                             <i class="icon-bell mx-0"></i>
                             <span class="count"></span>
-                        </a>
+                        </a> -->
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
                             <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
                             <a class="dropdown-item preview-item">
@@ -66,7 +66,7 @@
                                         <i class="ti-info-alt mx-0"></i>
                                     </div>
                                 </div>
-                                <div class="preview-item-content">
+                                <!-- <div class="preview-item-content">
                                     <h6 class="preview-subject font-weight-normal">Application Error</h6>
                                     <p class="font-weight-light small-text mb-0 text-muted">
                                         Just now
@@ -78,13 +78,13 @@
                                     <div class="preview-icon bg-warning">
                                         <i class="ti-settings mx-0"></i>
                                     </div>
-                                </div>
-                                <div class="preview-item-content">
+                                </div> -->
+                                <!-- <div class="preview-item-content">
                                     <h6 class="preview-subject font-weight-normal">Settings</h6>
                                     <p class="font-weight-light small-text mb-0 text-muted">
                                         Private message
                                     </p>
-                                </div>
+                                </div> -->
                             </a>
                             <a class="dropdown-item preview-item">
                                 <div class="preview-thumbnail">
@@ -106,10 +106,10 @@
                             <img src="<?= base_url('assets'); ?>/images/logo/kementan.png" alt="profile" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                            <a class="dropdown-item">
+                            <!-- <a class="dropdown-item">
                                 <i class="ti ti-settings"></i>
                                 Settings
-                            </a>
+                            </a> -->
                             <a class="dropdown-item" href="<?php echo base_url(); ?>login">
                                 <i class="ti ti-logout"></i>
                                 Logout
@@ -318,7 +318,7 @@
                     <div class="collapse" id="form-elements">
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item"><a class="nav-link" href="<?=base_url()?>riwayatdisposisi">Riwayat Disposisi</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?=base_url()?>riwayatsurat">Riwayat Surat</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?=base_url()?>riwayatsurat">Riwayat Surat Masuk</a></li>
                     </ul>
                     </div>
                 </li>

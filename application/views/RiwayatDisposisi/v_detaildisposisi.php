@@ -4,7 +4,7 @@
             <div class="col-md-12 grid-margin">
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                    <h3 class="m-0 font-weight-bold text">Detail Surat Disposisi</h3><br>
+                    <h3 class="m-0 font-weight-bold text">Detail Disposisi Surat</h3><br>
                     <div class="col-md-12 grid-margin">
                         <div class="card shadow p-5 md-12">
                             <div class="col-lg-12 grid-margin stretch-card">

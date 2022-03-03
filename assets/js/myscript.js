@@ -28,14 +28,14 @@ if (flash5) {
 
 
 //sweetalert2 tombol hapus
-$(document).on('click', '#hapussatuan', function (e) {
+$(document).on('click', '#hapusmasuk', function (e) {
 
     e.preventDefault();
     var href = $(this).attr('href')
 
     Swal.fire({
         title: 'Apakah Anda Yakin?',
-        text: "Hapus Data Satuan Barang",
+        text: "Hapus Surat Masuk",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -48,14 +48,14 @@ $(document).on('click', '#hapussatuan', function (e) {
     })
 })
 
-$(document).on('click', '#hapusjenis', function (e) {
+$(document).on('click', '#hapusdisposisi', function (e) {
 
     e.preventDefault();
     var href = $(this).attr('href')
 
     Swal.fire({
         title: 'Apakah Anda Yakin?',
-        text: "Hapus Data Jenis Barang",
+        text: "Hapus Disposisi Surat",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

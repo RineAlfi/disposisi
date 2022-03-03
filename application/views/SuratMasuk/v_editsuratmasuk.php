@@ -103,7 +103,7 @@
                             <div class="form-group row">
                             <label for="exampleInputMobile" class="col-sm-3 col-form-label">Perihal/Isi Surat</label>
                             <div class="col-sm-12">
-                                <textarea class="form-control" id="perihal" name="perihal" rows="4" value="<?php echo set_value('perihal', $suratmasuk['perihal']); ?>" required></textarea>
+                                <textarea class="form-control" id="perihal" name="perihal" rows="4" required><?php echo $suratmasuk['perihal']; ?></textarea>
                             </div>
                             </div>
                             <button type="submit" class="btn btn-success">Simpan</a></button>&nbsp &nbsp

@@ -6,14 +6,14 @@
                     <div class="card-header py-3">
                     <h3 class="m-0 font-weight-bold">Riwayat Disposisi</h3><br>
                     <div class="flash-data" id="flash2" data-flash="<?= $this->session->flashdata('sukses'); ?>"></div>
-                    <!-- <div class="col-md-4 grid-margin"> -->
+                    <div class="col-md-4 grid-margin mb-3"></div>
                     <!-- <a href="</?php echo base_url() ?>suratmasuk/tambah" class="btn btn-success btn-md"><i class="ti ti-plus"></i> Tambah Surat Masuk</a></div> -->
                     <div class="col-md-12 grid-margin">
                         <div class="card shadow mb-12">
                             <div class="col-rd-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                <div class="table-responsive pt-3 ">
+                                <!-- <div class="table-responsive pt-3 "> -->
                                 <table id="dataTable" class="table table-striped table-bordered table-md" style="width:100%">
                                 <thead  class="thead-light">
                                         <tr>
@@ -53,13 +53,13 @@
                                              <td>
                                                 <a class="btn btn-rd btn-warning" href="<?php echo base_url('/riwayatdisposisi/detail/' . $rd->id_riwayat) ?>"><i class="ti ti-eye"></i></a>
                                                 <a class="btn btn-rd btn-success" href="<?php echo base_url('/riwayatdisposisi/edit/' . $rd->id_riwayat) ?>"><i class="ti ti-pencil"></i></a>
-                                                <a onclick="return confirm('Yakin hapus data ini?')" class="btn btn-rd btn-danger" href="<?php echo site_url('/riwayatdisposisi/hapus/' . $rd->id_riwayat) ?>"><i class="ti ti-trash"></i></a>
+                                                <a id="hapusdisposisi" class="btn btn-rd btn-danger" href="<?php echo site_url('/riwayatdisposisi/hapus/' . $rd->id_riwayat) ?>"><i class="ti ti-trash"></i></a>
                                             </td>
                                             </tr>
                                         <?php } ?>
                                     </tbody>
                                     </table>
-                                </div>
+                                <!-- </div> -->
                             </div>
                         </div>
                     </div>
