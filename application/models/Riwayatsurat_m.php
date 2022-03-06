@@ -58,12 +58,13 @@ class Riwayatsurat_m extends CI_model
         return $query->row();
 	}
 
-	function join2inner()
+	function join2left()
     {
         $this->db->select('*');
-        $this->db->from('riwayat_surat');
-        $this->db->join('surat_masuk', 'surat_masuk.id_suratmasuk = riwayat_surat.suratmasuk_id', 'inner');
+        $this->db->from('surat_masuk');
+        $this->db->join('data_pegawai', 'data_pegawai.nip= surat_masuk.status', 'left');
         // $this->db->where($ket);
+        $this->db->order_by('id_suratmasuk', 'DESC');
         $query = $this->db->get();
         return $query->result();
     }

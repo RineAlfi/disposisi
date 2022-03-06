@@ -10,7 +10,7 @@ class Riwayatsurat extends CI_Controller {
     }
     function index()
     {
-        $data['suratmasuk'] = $this->Riwayatsurat_m->join2inner();
+        $data['suratmasuk'] = $this->Riwayatsurat_m->join2left();
         // $data['suratmasuk'] = $this->Riwayatsurat_m->get('surat_masuk');
         $data['title'] = "Riwayat Surat Masuk | Disposisi";
         $this->load->view('template/template',$data);

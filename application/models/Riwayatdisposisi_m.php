@@ -106,6 +106,7 @@ class Riwayatdisposisi_m extends CI_model
         $this->db->from('riwayat_disposisi');
         $this->db->join('surat_masuk', 'surat_masuk.id_suratmasuk = riwayat_disposisi.suratmasuk_id', 'inner');
         $this->db->join('data_pegawai', 'data_pegawai.nip = riwayat_disposisi.nip', 'inner');
+        $this->db->order_by('id_riwayat', 'DESC');
         // $this->db->where($ket, $param);
         $query = $this->db->get();
         return $query->result();

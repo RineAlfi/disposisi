@@ -51,7 +51,7 @@
                                                 <!-- <td><a class="btn btn-rd btn-outline-primary btn-icon-text" href="</?php echo base_url() ?>assets/file/suratmasuk/<?php echo $rd->dokumen ?>"><i class="ti ti-download"></i> Unduh</a></td> -->
                 
                                              <td>
-                                                <a class="btn btn-rd btn-warning" href="<?php echo base_url('/riwayatdisposisi/detail/' . $rd->id_riwayat) ?>"><i class="ti ti-eye"></i></a>
+                                                <a class="btn btn-rd btn-info" href="<?php echo base_url('/riwayatdisposisi/detail/' . $rd->id_riwayat) ?>"><i class="ti ti-info-circle"></i></a>
                                                 <a class="btn btn-rd btn-success" href="<?php echo base_url('/riwayatdisposisi/edit/' . $rd->id_riwayat) ?>"><i class="ti ti-pencil"></i></a>
                                                 <a id="hapusdisposisi" class="btn btn-rd btn-danger" href="<?php echo site_url('/riwayatdisposisi/hapus/' . $rd->id_riwayat) ?>"><i class="ti ti-trash"></i></a>
                                             </td>

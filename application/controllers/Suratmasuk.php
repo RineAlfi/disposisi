@@ -10,8 +10,8 @@ class SuratMasuk extends CI_Controller {
     }
     function index()
     {
-        $data['suratmasuk'] = $this->Suratmasuk_m->tampil_data('surat_masuk')->result();
-        // $data['suratmasuk'] = $this->Suratmasuk_m->join2inner();
+        // $data['suratmasuk'] = $this->Suratmasuk_m->tampil_data('surat_masuk')->result();
+        $data['suratmasuk'] = $this->Suratmasuk_m->join2left();
         $data['title'] = "Surat Masuk | Disposisi";
         $this->load->view('template/template',$data);
 		$this->load->view('SuratMasuk/v_suratmasuk',$data);
@@ -142,7 +142,7 @@ class SuratMasuk extends CI_Controller {
         $data['detail'] = $detail;
         $sifatsurat_id = $detail->sifatsurat_id;
         $ket = ['id_suratmasuk' => $id_suratmasuk];
-        $data['datapeg'] = $this->Suratmasuk_m->join2inner($ket, $id_suratmasuk);
+        $data['datapeg'] = $this->Suratmasuk_m->join2left2($ket, $id_suratmasuk);
         // var_dump( $data['datapeg']);
         $data['suratmasuk'] = $this->Suratmasuk_m->get('surat_masuk', ['id_suratmasuk' => $id_suratmasuk]);
         $data['title'] = 'Detail Surat Masuk | Disposisi';

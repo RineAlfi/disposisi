@@ -28,6 +28,25 @@ if (flash5) {
 
 
 //sweetalert2 tombol hapus
+$(document).on('click', '#hapuspegawai', function (e) {
+
+    e.preventDefault();
+    var href = $(this).attr('href')
+
+    Swal.fire({
+        title: 'Apakah Anda Yakin?',
+        text: "Hapus Data Pegawai",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Hapus data'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location = href
+        }
+    })
+})
 $(document).on('click', '#hapusmasuk', function (e) {
 
     e.preventDefault();
@@ -68,54 +87,15 @@ $(document).on('click', '#hapusdisposisi', function (e) {
     })
 })
 
-$(document).on('click', '#hapusbarang', function (e) {
+
+$(document).on('click', '#hapussifat', function (e) {
 
     e.preventDefault();
     var href = $(this).attr('href')
 
     Swal.fire({
         title: 'Apakah Anda Yakin?',
-        text: "Hapus Data Barang",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Hapus data'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.location = href;
-        }
-    })
-})
-
-$(document).on('click', '#hapusmasuk', function (e) {
-
-    e.preventDefault();
-    var href = $(this).attr('href')
-
-    Swal.fire({
-        title: 'Apakah Anda Yakin?',
-        text: "Hapus Data Barang Masuk",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Hapus data'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.location = href;
-        }
-    })
-})
-
-$(document).on('click', '#hapuskembali', function (e) {
-
-    e.preventDefault();
-    var href = $(this).attr('href')
-
-    Swal.fire({
-        title: 'Apakah Anda Yakin?',
-        text: "Hapus Data Barang Kembali",
+        text: "Hapus Data Sifat Surat",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

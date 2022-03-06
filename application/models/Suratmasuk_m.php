@@ -2,6 +2,7 @@
 class Suratmasuk_m extends CI_model
 {
 	function tampil_data($table){
+        $this->db->order_by('id_suratmasuk', 'DESC');
 		return $this->db->get($table);
 	}
 
@@ -74,14 +75,25 @@ class Suratmasuk_m extends CI_model
         return $id_suratmasuk;
     }
 
-	function join2inner($ket, $param)
+	function join2left2($ket, $param)
     {
         $this->db->select('*');
         $this->db->from('surat_masuk');
-        $this->db->join('data_pegawai', 'data_pegawai.nip = surat_masuk.status', 'inner');
+        $this->db->join('data_pegawai', 'data_pegawai.nip = surat_masuk.status', 'left');
         $this->db->where($ket, $param);
         $query = $this->db->get();
         return $query->row();
+    }
+
+    function join2left()
+    {
+        $this->db->select('*');
+        $this->db->from('surat_masuk');
+        $this->db->join('data_pegawai', 'data_pegawai.nip= surat_masuk.status', 'left');
+        // $this->db->where($ket);
+        $this->db->order_by('id_suratmasuk', 'DESC');
+        $query = $this->db->get();
+        return $query->result();
     }
 
 }
