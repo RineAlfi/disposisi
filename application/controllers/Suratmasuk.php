@@ -158,4 +158,40 @@ class SuratMasuk extends CI_Controller {
         $this->session->set_flashdata('sukses', 'Surat Masuk Berhasil Dihapus');
 		redirect('suratmasuk');
 	}
+
+    public function pdf($id_suratmasuk)
+    {
+
+        //Ambil Data Barang Keluar
+        // $data['id_barangkeluar'] = $data['id_barangkeluar']
+        $detail = $this->Suratmasuk_m->detail_data($id_suratmasuk);
+        $this->data['detail'] = $detail;
+        $sifatsurat_id = $detail->sifatsurat_id;
+        $ket = ['id_suratmasuk' => $id_suratmasuk];
+        $datapeg = $this->Suratmasuk_m->join3left($ket, $id_suratmasuk);
+        $this->data['datapeg'] = $datapeg;
+        // $detaildispo = $this->Suratmasuk_m->detail_data2($id_suratmasuk);
+        // $this->data['detaildispo'] = $detaildispo;
+        // $suratmasuk_id = $detaildispo->suratmasuk_id;
+        // var_dump($data['detail']);
+
+        // panggil library yang kita buat sebelumnya yang bernama pdfgenerator
+        $this->load->library('pdfgenerator');
+        
+        // title dari pdf
+        $this->data['title_pdf'] = 'Disposisi Surat';
+        
+        // filename dari pdf ketika didownload
+        $file_pdf = 'disposisi_surat';
+        // setting paper
+        $paper = 'A4';
+        //orientasi paper potrait / landscape
+        $orientation = "portrait";
+        
+		$html=$this->load->view('Pdf/v_suratpdf', $this->data, true);	    
+        
+        // run dompdf
+        $this->pdfgenerator->generate($html, $file_pdf,$paper,$orientation);
+
+    }
 }

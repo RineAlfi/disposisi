@@ -10,15 +10,7 @@ class Riwayatdisposisi extends CI_Controller {
     }
     function index()
     {
-        // $data['riwayatdisposisi'] = $this->Riwayatdisposisi_m->tampil_data('riwayat_disposisi')->result(); 
         $data['riwayatdisposisi'] = $this->Riwayatdisposisi_m->join3inner();
-        // $ket1 = 'surat_masuk.id_suratmasuk = riwayat_disposisi.suratmasuk_id';
-        // $ket2 = 'data_pegawai.nip = riwayat_disposisi.nip';
-        // $ket3 = 'riwayat_disposisi.id_riwayat';
-        // $detailsurat = $this->Riwayatdisposisi_m->join3('riwayat_disposisi', 'surat_masuk', 'data_pegawai', $ket1, $ket2, $ket3);
-        // $data['riwayatdisposisi'] = $detailsurat;
-        // $data['riwayatdisposisi'] = $this->Riwayatdisposisi_m->get('riwayat_disposisi');
-        // var_dump($data['riwayatdisposisi']);
         $data['title'] = "Riwayat Disposisi Surat | Disposisi";
         $this->load->view('template/template',$data);
 		$this->load->view('RiwayatDisposisi/v_riwayatdisposisi',$data);
