@@ -5,6 +5,7 @@ class Riwayatsurat extends CI_Controller {
     function __construct()
     {
         parent::__construct();
+        cekmasuk();
         $this->load->Model('Riwayatsurat_m');
         $this->load->helper('url');
     }

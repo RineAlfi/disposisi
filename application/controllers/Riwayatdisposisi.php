@@ -5,6 +5,7 @@ class Riwayatdisposisi extends CI_Controller {
     function __construct()
     {
         parent::__construct();
+        cekmasuk();
         $this->load->Model('Riwayatdisposisi_m');
         $this->load->helper('url');
     }

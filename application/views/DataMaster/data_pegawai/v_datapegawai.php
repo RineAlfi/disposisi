@@ -45,7 +45,7 @@
                                         <td >
                                             <a class="btn btn-md btn-warning" href="<?php echo base_url('data_pegawai/detail/' . $dp->nip) ?>"><i class="ti ti-eye"></i></a>
                                             <a class="btn btn-md btn-success" href="<?php echo base_url('data_pegawai/edit/' . $dp->nip) ?>"><i class="ti ti-pencil"></i></a>
-                                            <a onclick="return confirm('Yakin hapus data ini?')" id="hapuspegawai" class="btn btn-md btn-danger" href="<?php echo site_url('data_pegawai/hapus/' . $dp->nip) ?>"><i class="ti ti-trash"></i></a>
+                                            <a id="hapuspegawai" class="btn btn-md btn-danger" href="<?php echo site_url('data_pegawai/hapus/' . $dp->nip) ?>"><i class="ti ti-trash"></i></a>
                                         </td>
                                         </tr>
                                         <?php } ?>

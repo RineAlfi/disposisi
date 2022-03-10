@@ -5,6 +5,7 @@ class SuratMasuk extends CI_Controller {
     function __construct()
     {
         parent::__construct();
+        cekmasuk();
         $this->load->Model('Suratmasuk_m');
         $this->load->helper('url');
     }

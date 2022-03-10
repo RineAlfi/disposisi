@@ -32,7 +32,7 @@
                                             <td ><?php echo $ss->sifat_surat ?></td>
                                         <td>
                                             <a class="btn btn-sm btn-success" href="<?php echo base_url('/sifatsurat/edit/' . $ss->id_sifatsurat) ?>"><i class="ti ti-pencil"></i></a>
-                                            <a onclick="return confirm('Yakin hapus data ini?')" id="hapussifat" class="btn btn-sm btn-danger" href="<?php echo site_url('/sifatsurat/hapus/' . $ss->id_sifatsurat) ?>"><i class="ti ti-trash"></i></a>
+                                            <a id="hapussifat" class="btn btn-sm btn-danger" href="<?php echo site_url('/sifatsurat/hapus/' . $ss->id_sifatsurat) ?>"><i class="ti ti-trash"></i></a>
                                         </td>
                                         </tr>
                                         <?php } ?>

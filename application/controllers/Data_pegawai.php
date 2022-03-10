@@ -4,6 +4,7 @@ class Data_Pegawai extends CI_Controller {
     function __construct()
     {
         parent::__construct();
+        cekmasuk();
         $this->load->Model('Datapegawai_m');
         // $this->load->Model('Model_golongan');
         $this->load->helper('url');
