@@ -13,6 +13,11 @@
             font-size: 13px;
         }
 
+        /* table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        } */
+
         table tr .text{
             text-align: right;
             font-size: 13px;
@@ -45,6 +50,7 @@
             </tr>
         </table>
         <br>
+        
         <table width="100%">
             <tr>
                 <td class="text2">
@@ -53,70 +59,70 @@
             </tr>
         </table>
         <br>
-        <table border width="100%">
+        <table style="border: 1px solid black; border-collapse: collapse;" width="100%">
             <tr>
-                <td width="50">Sifat Surat: <?php echo $detail->sifat_surat?> </td>
-                <td width="50">Kode/Indeks: <?php echo $datapeg->kode?> </td>
+                <td style="border: 1px solid black; border-collapse: collapse; height: 3%;" width="50%">Sifat Surat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $detail->sifat_surat?> </td>
+                <td style="border: 1px solid black; border-collapse: collapse;" width="50%">Kode/Indeks&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $datapeg->kode?> </td>
             </tr>
         </table>
-        <table border width="100%">
+        <table style="border: 1px solid black; border-collapse: collapse;" width="100%">
             <tr>
-                <td width="50">Tanggal Surat: <?php echo $datapeg->tanggal_surat?> </td>
-                <td width="50">Tanggal Input: <?php echo $datapeg->tanggal_input?> </td>
+                <td style="border: 1px solid black; border-collapse: collapse; height: 3%;" width="50%">Tanggal Surat&nbsp;&nbsp;: <?php echo $datapeg->tanggal_surat?> </td>
+                <td style="border: 1px solid black; border-collapse: collapse;" width="50%">Tanggal Input&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $datapeg->tanggal_input?> </td>
             </tr>
         </table>
-        <table border width="100%">
+        <table style="border: 1px solid black; border-collapse: collapse;" width="100%">
             <tr>
-                <td width="50">No. Surat: <?php echo $datapeg->no_surat?> </td>
-                <td width="50">No. Urut: <?php echo $datapeg->no_urut?> </td>
+                <td style="border: 1px solid black; border-collapse: collapse; height: 3%;" width="50%">No. Surat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $datapeg->no_surat?> </td>
+                <td style="border: 1px solid black; border-collapse: collapse;" width="50%">No. Urut&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $datapeg->no_urut?> </td>
             </tr>
         </table>
-        <table border width="100%">
+        <table style="border: 1px solid black; border-collapse: collapse;" width="100%">
             <tr>
-                <td width="50">Asal Surat: <?php echo $datapeg->asal_surat?> </td>
-                <td width="50">File Surat: <?php echo $datapeg->dokumen?> </td>
+                <td style="border: 1px solid black; border-collapse: collapse; height: 3%;" width="50%">Asal Surat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $datapeg->asal_surat?> </td>
+                <td style="border: 1px solid black; border-collapse: collapse;" width="50%">File Surat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $datapeg->dokumen?> </td>
             </tr>
         </table>
-        <table border width="100%">
+        <table style="border: 1px solid black; border-collapse: collapse;" width="100%">
             <tr>
-                <td>Perihal/Isi: <?php echo $datapeg->perihal?> </td>
+                <td style="height: 3%;">Perihal/Isi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $datapeg->perihal?> </td>
             </tr>
         </table>
-        <table border width="100%">
+        <table style="border: 1px solid black; border-collapse: collapse;" width="100%">
             <tr>
-                <td>Diteruskan ke: <?php echo $datapeg->nama_pegawai?> </td>
+                <td style="height: 3%;">Diteruskan ke&nbsp;: <?php echo $datapeg->nama_pegawai?> </td>
             </tr>
         </table>
-        <table border width="100%">
+        <table style="border: 1px solid black; border-collapse: collapse;" width="100%">
             <tr>
-                <td>Isi Disposisi: <?php echo $datapeg->isi?> </td>
+                <td style="height: 3%;">Isi Disposisi&nbsp;&nbsp;&nbsp;: <?php echo $datapeg->isi?> </td>
             </tr>
         </table>
-        <table border width="100%">
+        <table style="border: 1px solid black; border-collapse: collapse;" width="100%">
             <tr>
-                <td>Catatan: <?php echo $datapeg->catatan?> </td>
+                <td style="height: 3%;">Catatan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $datapeg->catatan?> </td>
             </tr>
         </table>
         <!-- <table width="100%">
             <tr>
                 <td width="100">Kepada&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </td>
             </tr>
-        </table> -->
-        <!-- <table width="100%">
+        </table>
+        <table width="100%">
             <tr>
                 <td width="100">Bahan Diseminasi&nbsp;: </td>
                 <td></?php echo $detail->nama_barang?> </?php echo $detail->jumlah_keluar?> </?php echo $detailbarang->nama_satuan?></td> -->
                 <!-- <td width="20"></?php echo $detail->jumlah_keluar?></td> -->
                 <!-- <td width="50"></?php echo $detailbarang->nama_satuan?></td> -->
-            <!-- </tr>
-        </table> -->
-        <!-- <table width="100%">
+            <!-- </tr> -->
+        <!-- </table>
+        <table width="100%">
             <tr>
                 <td width="100">Diserahkan pada&nbsp;&nbsp;&nbsp;: </td>
                 <td></?php echo $detail->tanggal_keluar?></td>
             </tr>
-        </table> -->
-        <!-- <table width="100%">
+        </table>
+        <table width="100%">
             <tr>
                 <td width="100">Keterangan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </td>
                 <td></?php echo $detail->keterangan?></td>
@@ -129,8 +135,8 @@
                 <td width="25"class="text2">Yang Menyerahkan<br><br><br><br><br><br><br><hr> </td>
                 <td width="50"></td>
                 <td width="25" class="text2">Yang Menerima<br><br><br><br><br><br><br><hr> </td>
-            </tr>
-        </table> -->
+            </tr> -->
+        <!-- </table> -->
 
     <!-- </center> -->
 </body>
