@@ -52,11 +52,7 @@
                                                     <?php } ?>
                                                 </td>
                                                 <td>
-                                                <!-- <a class="btn btn-sm btn-info" href="<?php echo base_url('/riwayatdisposisi/tambah/' . $sm->id_suratmasuk) ?>">Disposisi</a> -->
                                                 <a class="btn btn-sm btn-warning" href="<?php echo base_url('/riwayatsurat/detail/' . $sm->id_suratmasuk) ?>"><i class="ti ti-eye"></i></a>
-                                                <!-- <a class="btn btn-sm btn-success" href="<?php echo base_url('/suratmasuk/edit/' . $sm->id_suratmasuk) ?>"><i class="ti ti-pencil"></i></a> -->
-                                                <!-- <a onclick="return confirm('Yakin hapus data ini?')" id="hapusmasuk" class="btn btn-sm btn-danger" href="<?php echo site_url('/suratmasuk/hapus/' . $sm->id_suratmasuk) ?>"><i class="ti ti-trash"></i></a> -->
-                                                <!-- <a class="btn btn-sm btn-secondary" href="<?php echo base_url('/suratmasuk/edit/' . $sm->id_suratmasuk) ?>"><i class="ti ti-printer"></i></a> -->
                                             </td>
                                             </tr>
                                         <?php } ?>

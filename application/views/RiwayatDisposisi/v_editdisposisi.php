@@ -17,97 +17,6 @@
                         <!-- <h4 class="card-title">Surat Masuk</h4><br> -->
                             <div class="row">
                             <div class="col-md-12">
-                                <!-- <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Sifat Surat</label>
-                                <div class="col-sm-9">
-                                    <select id="sifatsurat_id" name="sifatsurat_id" class="form-control" disabled required>
-                                        <option value="" selected disabled>--Pilih Sifat Surat--</option>
-                                        <?php foreach ($sifatsurat as $ss) : ?>
-                                            <option <?php echo $suratmasuk['sifatsurat_id'] == $ss['id_sifatsurat'] ? 'selected' : '';?> <?php echo set_select('sifatsurat_id', $ss['id_sifatsurat']) ?> value="<?php echo $ss['id_sifatsurat'] ?>"><?php echo $ss['sifat_surat']?></option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </div>
-                                </div>
-                                <?php echo form_error('sifat_surat', '<div class="text-small text-danger"></div>') ?>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Kode/Indeks</label>
-                                    <div class="col-sm-9">
-                                        <input type='numeric' id="kode" name="kode" value="<?php echo set_value('kode', $suratmasuk['kode']); ?>" class="form-control" readonly required/>
-                                    </div>
-                                    </div>
-                                    <?php echo form_error('kode', '<div class="text-small text-danger"></div>') ?>
-                                </div>
-                                </div> -->
-                                <!-- <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Tanggal Surat</label>
-                                    <div class="col-sm-9">
-                                        <input type="date" class="form-control" id="tanggal_surat" name="tanggal_surat" value="<?php echo set_value('tanggal_surat', $suratmasuk['tanggal_surat']); ?>" readonly required/>
-                                    </div>
-                                    </div>
-                                    <?php echo form_error('tanggal_surat', '<div class="text-small text-danger"></div>') ?>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Tanggal Input</label>
-                                    <div class="col-sm-9">
-                                        <input type="date" class="form-control" id="tanggal_input" name="tanggal_input" value="<?php echo set_value('tanggal_input', $suratmasuk['tanggal_input']); ?>" readonly required/>
-                                    </div>
-                                    </div>
-                                    <?php echo form_error('tanggal_input', '<div class="text-small text-danger"></div>') ?>
-                                </div>
-                                </div> --> 
-                                <!-- <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">No. Surat</label>
-                                    <div class="col-sm-9">
-                                        <input type="numeric" class="form-control" id="no_surat" name="no_surat" value="<?php echo set_value('no_surat', $suratmasuk['no_surat']); ?>" readonly required/>
-                                    </div>
-                                    </div>
-                                    <?php echo form_error('no_surat', '<div class="text-small text-danger"></div>') ?>
-                                </div>
-                                <!-- <div class="col-md-6">
-                                    <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">No. Urut</label>
-                                    <div class="col-sm-9">
-                                        <input type="numeric" class="form-control" id="no_urut" name="no_urut" value="<?php echo set_value('no_urut', $suratmasuk['no_urut']); ?>" readonly required/>
-                                    </div>
-                                    </div>
-                                    <?php echo form_error('no_urut', '<div class="text-small text-danger"></div>') ?>
-                                </div>
-                                </div>
-                                <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Asal Surat</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="asal_surat" name="asal_surat" value="<?php echo set_value('asal_surat', $suratmasuk['asal_surat']); ?>" readonly required/>
-                                    </div>
-                                    </div>
-                                    <?php echo form_error('asal_surat', '<div class="text-small text-danger"></div>') ?>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">File Surat</label>
-                                    <div class="col-sm-9">
-                                        <a class="btn btn-rd btn-outline-primary btn-icon-text" href="<?php echo base_url() ?>assets/file/suratmasuk/<?php echo $suratmasuk['dokumen'] ?>"><i class="ti ti-download"></i><?php echo $suratmasuk['dokumen'] ?></a>
-                                    </div>
-                                    </div>
-                                    <?php echo form_error('dokumen', '<div class="text-small text-danger"></div>') ?>
-                                </div>
-                                </div>
-                                <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Perihal/Isi Surat</label>
-                                <div class="col-sm-12">
-                                    <textarea class="form-control" id="perihal" name="perihal" rows="4" readonly required><?php echo set_value('perihal', $suratmasuk['perihal']); ?></textarea>
-                                </div>
-                                </div> <br>
-                                <h4 class="card-title">Tambah Disposisi</h4>
-                                <h6>Diteruskan Kepada Yth</h6><br> -->
                                 <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Diteruskan Kepada Yth</label>
                                 <div class="col-sm-12">
@@ -140,24 +49,9 @@
                                     <textarea class="form-control" id="catatan" name="catatan" rows="4"><?php echo $riwayat_disposisi->catatan; ?></textarea>
                                 </div>
                                 </div>
-                                <!-- <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Catatan Tambahan</label>
-                                <div class="col-sm-12">
-                                    <textarea class="form-control" id="catatantam" name="catatantam" rows="4"></textarea>
-                                </div>
-                                </div>
-
-                                <div>
-                                </?php echo form_error('catatantam', '<div class="text-small text-danger"></div>') ?>
-                                </div> <br> -->
                                 
                                 <button type="submit" class="btn btn-success">Simpan</a></button>&nbsp &nbsp
-                                <!-- <button type="reset" class="btn btn-secondary">Reset</a></button>&nbsp &nbsp -->
                                 <a href="<?php echo base_url() ?>riwayatdisposisi" class="btn btn-warning" >Kembali</a>
-                                <!-- </?php echo form_close(); ?>   -->
-
-
-                        <!-- </div> -->
                     </div>
                     </div>
                     </form>

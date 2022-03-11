@@ -9,9 +9,6 @@
                         <div class="card shadow p-5 md-12">
                             <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
-                            <!-- <div class="text-center">
-                                <img src="</?php echo base_url() ?>assets/file/barangkembali/</?php echo $detail->fotokembali ?>" alt="" class="img-thumbnail" style="height: 210px; width:200px">
-                            </div><br> -->
                             <div class="col-lg-12 col-md-12 col-xs-9">
                             <table class="table table-no-bordered">
                                 <tr>
@@ -35,24 +32,6 @@
                                     <th>Catatan</th>
                                     <td><?php echo $detail->catatan?></td>
                                 </tr>
-                                <!-- <tr>
-                                    <th>Jenis Barang</th>
-                                    <td><?php echo $detail->nama_jenis?></td>
-                                </tr>
-                                <tr>
-                                    <th>Keterangan Kembali</th>
-                                    <td><?php echo $detail->keterangankembali?></td>
-                                </tr> -->
-                                <!-- <th>File</th>
-                                    <td>
-                                        <?php
-                                        if ($detail->dokumenkembali) { ?>
-                                            <a class="btn btn-outline-primary btn-icon-text" href="<?= base_url() ?>assets/file/Barangkembali/<?= $detail->dokumenkembali ?>" target="_blank">
-                                                <i class="ti ti-download"></i> <?= $detail->dokumenkembali; ?>
-                                            </a>
-                                        <?php } ?>
-                                    </td>
-                                </tr> -->
                             </table>
                             <a href="<?php echo base_url() ?>riwayatdisposisi" class="btn btn-warning float-right" >Kembali</a>
                             </div>

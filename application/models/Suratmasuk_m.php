@@ -43,13 +43,7 @@ class Suratmasuk_m extends CI_model
         return $query;
     }
 
-	public function update($table, $data, $ket)
-    {
-        $this->db->where($ket);
-        $this->db->update($table, $data);
-    }
-
-	public function detail_data($sifatsurat_id)
+    public function detail_data($sifatsurat_id)
     {
         $this->db->select('*');
         $this->db->from('surat_masuk');
@@ -57,17 +51,13 @@ class Suratmasuk_m extends CI_model
         $this->db->where('surat_masuk.id_suratmasuk', $sifatsurat_id);
         $query = $this->db->get();
         return $query->row();
-	}
-    public function detail_data2($suratmasuk_id)
+    }
+
+	public function update($table, $data, $ket)
     {
-        $this->db->select('*');
-        $this->db->from('riwayat_disposisi');
-        $this->db->join('surat_masuk', 'surat_masuk.id_suratmasuk = riwayat_disposisi.suratmasuk_id', 'left');
-        $this->db->join('data_pegawai', 'data_pegawai.nip = riwayat_disposisi.nip', 'left');
-        $this->db->where('riwayat_disposisi.id_riwayat', $suratmasuk_id);
-        $query = $this->db->get();
-        return $query->row();
-	}
+        $this->db->where($ket);
+        $this->db->update($table, $data);
+    }
 
 	public function idsm()
     {
@@ -85,7 +75,7 @@ class Suratmasuk_m extends CI_model
         return $id_suratmasuk;
     }
 
-	function join2left2($ket, $param)
+	public function join2left2($ket, $param)
     {
         $this->db->select('*');
         $this->db->from('surat_masuk');
@@ -95,18 +85,17 @@ class Suratmasuk_m extends CI_model
         return $query->row();
     }
 
-    function join2left()
+    public function join2left()
     {
         $this->db->select('*');
         $this->db->from('surat_masuk');
         $this->db->join('data_pegawai', 'data_pegawai.nip= surat_masuk.status', 'left');
-        // $this->db->where($ket);
         $this->db->order_by('id_suratmasuk', 'DESC');
         $query = $this->db->get();
         return $query->result();
     }
 
-    function join3left($ket, $param)
+    public function join3left($ket, $param)
     {
         $this->db->select('*');
         $this->db->from('surat_masuk');

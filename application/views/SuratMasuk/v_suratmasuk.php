@@ -20,8 +20,8 @@
                                         <th>No</th>
                                         <!-- <th style= "text-align: center;">Sifat Surat</th> -->
                                         <!-- <th style= "text-align: center;">Kode/Indeks</th> -->
-                                        <!-- <th style= "width=5% text-align: center;">No. Surat</th> -->
-                                        <th style= "text-align: center;">Tanggal Surat</th>
+                                        <th style= "text-align: center;">No Surat</th>
+                                        <!-- <th style= "text-align: center;">Tanggal Surat</th> -->
                                         <th style= "text-align: center;">Asal Surat</th>
                                         <!-- <th style= "text-align: center;">Perihal/Isi Surat</th> -->
                                         <!-- <th style= "text-align: center;">File Surat</th> -->
@@ -40,8 +40,8 @@
                                             <tr>
                                                 <td style= "text-align: center;"><?php echo $no++; ?></td>
                                                 <!-- <td></?php echo $sm->sifat_surat; ?></td> -->
-                                                <!-- <td></?php echo $sm->no_surat; ?></td> -->
-                                                <td><?php echo $sm->tanggal_surat ?></td>
+                                                <td><?php echo $sm->no_surat; ?></td>
+                                                <!-- <td></?php echo $sm->tanggal_surat ?></td> -->
                                                 <td><?php echo $sm->asal_surat?></td>
                                                 <!-- <td></?php echo $sm->perihal ?></td> -->
                                                 <!-- <td><a class="btn btn-sm btn-outline-primary btn-icon-text" href="</?php echo base_url() ?>assets/file/suratmasuk/</?php echo $sm->dokumen ?>"><i class="ti ti-download"></i> Unduh</a></td> -->

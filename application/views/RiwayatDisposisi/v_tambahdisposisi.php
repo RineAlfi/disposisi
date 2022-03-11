@@ -107,7 +107,6 @@
                                 </div>
                                 </div> <br>
                                 <h4 class="card-title">Tambah Disposisi</h4>
-                                <!-- <h6>Diteruskan Kepada Yth</h6><br> -->
                                 <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Diteruskan Kepada Yth</label>
                                 <div class="col-sm-12">
@@ -139,23 +138,9 @@
                                     <textarea class="form-control" id="catatan" name="catatan" rows="4"></textarea>
                                 </div>
                                 </div>
-                                <!-- <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Catatan Tambahan</label>
-                                <div class="col-sm-12">
-                                    <textarea class="form-control" id="catatantam" name="catatantam" rows="4"></textarea>
-                                </div>
-                                </div>
-
-                                <div>
-                                </?php echo form_error('catatantam', '<div class="text-small text-danger"></div>') ?>
-                                </div> <br> -->
                                 
                                 <button type="submit" class="btn btn-success">Simpan</a></button>&nbsp &nbsp
-                                <!-- <button type="reset" class="btn btn-secondary">Reset</a></button>&nbsp &nbsp -->
                                 <a href="<?php echo base_url() ?>suratmasuk" class="btn btn-warning" >Kembali</a>
-                                <!-- </?php echo form_close(); ?>   -->
-
-
                         </div>
                     </div>
                     </div>

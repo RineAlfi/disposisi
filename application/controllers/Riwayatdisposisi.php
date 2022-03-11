@@ -2,14 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Riwayatdisposisi extends CI_Controller {
-    function __construct()
+    public function __construct()
     {
         parent::__construct();
         cekmasuk();
         $this->load->Model('Riwayatdisposisi_m');
         $this->load->helper('url');
     }
-    function index()
+
+    public function index()
     {
         $data['riwayatdisposisi'] = $this->Riwayatdisposisi_m->join3inner();
         $data['title'] = "Riwayat Disposisi Surat | Disposisi";
@@ -18,7 +19,7 @@ class Riwayatdisposisi extends CI_Controller {
         $this->load->view('template/footer',$data);
     }
     
-    function tambah($id_suratmasuk)
+    public function tambah($id_suratmasuk)
 	{
         $data['data_pegawai'] = $this->Riwayatdisposisi_m->get('data_pegawai');
         $data['riwayatdisposisi'] = $this->Riwayatdisposisi_m->get('riwayat_disposisi');
@@ -31,7 +32,7 @@ class Riwayatdisposisi extends CI_Controller {
         
         $this->form_validation->set_rules('kepada', 'Diteruskan Kepada', 'required');
         $this->form_validation->set_rules('isi', 'Isi', 'required');
-        // var_dump($data['data_pegawai']);
+        
         $data['title'] = 'Tambah Disposisi Surat | Disposisi';
         $this->load->view('template/template', $data);
         $this->load->view('RiwayatDisposisi/v_tambahdisposisi', $data);
@@ -44,14 +45,15 @@ class Riwayatdisposisi extends CI_Controller {
         $ket = ['id_riwayat' => $id_riwayat];
         $id_suratmasuk = $this->input->post('id');
         $ket2 = ['id_suratmasuk' => $id_suratmasuk];
-        // $detail = $this->Riwayatdisposisi_m->detailupdate('riwayat_disposisi', $ket);
+        $data['user2'] = $this->Riwayatdisposisi_m->getuser();
+        $nip = $data['user2']['nama_pegawai'];
+       
             $data = [
+                'user'=> $nip,
                 'suratmasuk_id'=> $this->input->post('id'),
                 'isi' =>  $this->input->post('isi'),
                 'catatan' => $this->input->post('catatan'),
                 'nip' => $this->input->post('nip'),
-                // 'catatantam' => $this->input->post('nip'),
-                
                 // 'sifatsurat_id' => $this->input->post('sifatsurat_id'),
                 // 'kode' => $this->input->post('kode'),
                 // 'tanggal_surat' => $this->input->post('tanggal_surat'),
@@ -65,15 +67,12 @@ class Riwayatdisposisi extends CI_Controller {
             $data2=[
                 'status' => $this->input->post('nip'),
             ];
-            // var_dump($data);
             $this->Riwayatdisposisi_m->input_data($data, 'riwayat_disposisi');
             $this->Riwayatdisposisi_m->update_data($ket2, $data2, 'surat_masuk');
             $this->session->set_flashdata('sukses', 'Disposisi Berhasil Ditambahkan');
             redirect('riwayatdisposisi');
-        // }
     }
 
-        
     private function _validasi()
     {
         $this->form_validation->set_rules('no_surat', 'No Surat', 'required');
@@ -82,11 +81,10 @@ class Riwayatdisposisi extends CI_Controller {
         $this->form_validation->set_rules('catatan', 'Catatan');
     }
 
-    function edit($id_riwayat)
+    public function edit($id_riwayat)
     {
         $this->_validasi();
         $data['detail'] = $this->Riwayatdisposisi_m->getDetail($id_riwayat);
-        // $data['sifatsurat'] = $this->Riwayatdisposisi_m->get('sifat_surat');
         $data['data_pegawai'] = $this->Riwayatdisposisi_m->get('data_pegawai');
         $ket = 'riwayat_disposisi.id_riwayat';
         $detailsurat = $this->Riwayatdisposisi_m->join2innerdetail($ket, $id_riwayat);
@@ -95,7 +93,6 @@ class Riwayatdisposisi extends CI_Controller {
         $this->load->view('template/template', $data);
         $this->load->view('RiwayatDisposisi/v_editdisposisi', $data);
         $this->load->view('template/footer', $data);
-        // var_dump($data['riwayat_disposisi']);
     }
 
     public function simpan()
@@ -103,20 +100,18 @@ class Riwayatdisposisi extends CI_Controller {
         $id_riwayat = $this->input->post('id');
         $ket = ['id_riwayat' => $id_riwayat];
         $detail = $this->Riwayatdisposisi_m->detailupdate('riwayat_disposisi', $ket);
-        // var_dump($detail);
         $data = [
                 'suratmasuk_id'=> $detail->suratmasuk_id,
                 'isi' =>  $this->input->post('isi'),
                 'catatan' => $this->input->post('catatan'),
                 'nip' => $this->input->post('nip'),
         ];
-        // var_dump($data);
         $this->Riwayatdisposisi_m->update('riwayat_disposisi', $data, $ket);
         $this->session->set_flashdata('sukses', 'Disposisi Berhasil Diubah');
         redirect('riwayatdisposisi');
     }
 
-    function detail($id_suratmasuk)
+    public function detail($id_suratmasuk)
     {
         $detail = $this->Riwayatdisposisi_m->detail_data($id_suratmasuk);
         $data['detail'] = $detail;
@@ -126,7 +121,7 @@ class Riwayatdisposisi extends CI_Controller {
         $this->load->view('template/footer', $data);
     }
 
-    function hapus($id_riwayat)
+    public function hapus($id_riwayat)
 	{
 		$where = array('id_riwayat' => $id_riwayat);
 		$this->Riwayatdisposisi_m->hapus_data($where, 'riwayat_disposisi');

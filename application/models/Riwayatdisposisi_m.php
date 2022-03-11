@@ -43,6 +43,12 @@ class Riwayatdisposisi_m extends CI_model
 		return $this->db->where('id_riwayat', $id)->get('riwayat_disposisi')->row();
 	}
 
+    public function getuser()
+    {
+        $query = $this->db->get_where('data_pegawai', ['email' => $this->session->userdata('email')])->row_array();
+        return $query;
+    }
+
     public function detail_data($suratmasuk_id)
     {
         $this->db->select('*');
@@ -53,6 +59,11 @@ class Riwayatdisposisi_m extends CI_model
         $query = $this->db->get();
         return $query->row();
 	}
+
+    public function detailupdate($table, $ket){
+        $query = $this->db->get_where($table, $ket)->row();
+        return $query;
+    }
 
     function join2($table, $table2, $ktabel21, $ket, $param)
     {
@@ -85,21 +96,6 @@ class Riwayatdisposisi_m extends CI_model
         return $query->result();
     }
 
-    public function detailupdate($table, $ket){
-        $query = $this->db->get_where($table, $ket)->row();
-        return $query;
-    }
-
-    // public function join2inner()
-    // {
-    //     $this->db->select('*');
-    //     $this->db->from('riwayat_disposisi');
-    //     $this->db->join('data_pegawai', 'data_pegawai.nip = riwayat_disposisi.nip', 'inner');
-    //     // $this->db->where($ket, $param);
-    //     $query = $this->db->get();
-    //     return $query->result();
-    // }
-
     public function join3inner()
     {
         $this->db->select('*');
@@ -107,7 +103,6 @@ class Riwayatdisposisi_m extends CI_model
         $this->db->join('surat_masuk', 'surat_masuk.id_suratmasuk = riwayat_disposisi.suratmasuk_id', 'inner');
         $this->db->join('data_pegawai', 'data_pegawai.nip = riwayat_disposisi.nip', 'inner');
         $this->db->order_by('id_riwayat', 'DESC');
-        // $this->db->where($ket, $param);
         $query = $this->db->get();
         return $query->result();
     }

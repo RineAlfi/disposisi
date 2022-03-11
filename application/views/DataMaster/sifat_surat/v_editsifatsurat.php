@@ -19,7 +19,6 @@
                                             <input type="text" name="sifat_surat" class="form-control" value="<?php echo $ss->sifat_surat ?>" name="sifat_surat" required>
                                         </div>
                                         <button type="submit" class="btn btn-success">Simpan</a></button>&nbsp &nbsp
-                                        <!-- <button type="reset" class="btn btn-secondary">Reset</a></button>&nbsp &nbsp -->
                                         <a href="<?php echo base_url() ?>sifatsurat" class="btn btn-warning" >Kembali</a>
                                     </form>
                                 <?php } ?>

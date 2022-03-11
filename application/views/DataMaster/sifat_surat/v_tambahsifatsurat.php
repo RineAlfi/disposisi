@@ -14,7 +14,6 @@
                         <?php echo form_error('sifat_surat', '<div class="text-small text-danger"></div>') ?>
                     </div>
                     <button type="submit" class="btn btn-success">Simpan</a></button>&nbsp &nbsp
-                    <!-- <button type="reset" class="btn btn-secondary">Reset</a></button>&nbsp &nbsp -->
                     <a href="<?php echo base_url() ?>sifatsurat" class="btn btn-warning" >Kembali</a>
                 </form>
             </div>

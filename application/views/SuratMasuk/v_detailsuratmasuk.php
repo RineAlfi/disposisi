@@ -9,9 +9,6 @@
                         <div class="card shadow p-5 md-12">
                             <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
-                            <!-- <div class="text-center">
-                                <img src="</?php echo base_url() ?>assets/file/barangmasuk/</?php echo $datapeg->foto ?>" alt="" class="img-thumbnail" style="height: 210px; width:200px">
-                            </div><br> -->
                             <div class="col-lg-12 col-md-12 col-xs-9">
                             <table class="table table-no-bordered">
                                 <tr>

@@ -103,41 +103,6 @@
                 <td style="height: 3%;">Catatan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $datapeg->catatan?> </td>
             </tr>
         </table>
-        <!-- <table width="100%">
-            <tr>
-                <td width="100">Kepada&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </td>
-            </tr>
-        </table>
-        <table width="100%">
-            <tr>
-                <td width="100">Bahan Diseminasi&nbsp;: </td>
-                <td></?php echo $detail->nama_barang?> </?php echo $detail->jumlah_keluar?> </?php echo $detailbarang->nama_satuan?></td> -->
-                <!-- <td width="20"></?php echo $detail->jumlah_keluar?></td> -->
-                <!-- <td width="50"></?php echo $detailbarang->nama_satuan?></td> -->
-            <!-- </tr> -->
-        <!-- </table>
-        <table width="100%">
-            <tr>
-                <td width="100">Diserahkan pada&nbsp;&nbsp;&nbsp;: </td>
-                <td></?php echo $detail->tanggal_keluar?></td>
-            </tr>
-        </table>
-        <table width="100%">
-            <tr>
-                <td width="100">Keterangan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </td>
-                <td></?php echo $detail->keterangan?></td>
-            </tr>
-        </table>
-        <br>
-        <br>
-        <table width="100%">
-            <tr>
-                <td width="25"class="text2">Yang Menyerahkan<br><br><br><br><br><br><br><hr> </td>
-                <td width="50"></td>
-                <td width="25" class="text2">Yang Menerima<br><br><br><br><br><br><br><hr> </td>
-            </tr> -->
-        <!-- </table> -->
-
-    <!-- </center> -->
+        
 </body>
 </html>

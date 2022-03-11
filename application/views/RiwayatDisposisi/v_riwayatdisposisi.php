@@ -7,7 +7,6 @@
                     <h3 class="m-0 font-weight-bold">Riwayat Disposisi</h3><br>
                     <div class="flash-data" id="flash2" data-flash="<?= $this->session->flashdata('sukses'); ?>"></div>
                     <div class="col-md-4 grid-margin mb-3"></div>
-                    <!-- <a href="</?php echo base_url() ?>suratmasuk/tambah" class="btn btn-success btn-md"><i class="ti ti-plus"></i> Tambah Surat Masuk</a></div> -->
                     <div class="col-md-12 grid-margin">
                         <div class="card shadow mb-12">
                             <div class="col-rd-12 grid-margin stretch-card">
@@ -42,7 +41,7 @@
                                                 <td style= "text-align: center;"><?php echo $no++; ?></td>
                                                 <!-- <td></?php echo $rd->sifat_surat; ?></td> -->
                                                 <td><?php echo $rd->no_surat ?></td>
-                                                <td><?php echo 'user' ?></td>
+                                                <td><?php echo $rd->user ?></td>
                                                 <!-- <td></?php echo $rd->nip; ?></td> -->
                                                 <td><?php echo $rd->nama_pegawai; ?></td>
                                                 <!-- <td></?php echo $rd->isi?></td> -->
@@ -63,7 +62,6 @@
                             </div>
                         </div>
                     </div>
-                <!-- </div>  -->
             </div> 
     </div>                   
 </div>

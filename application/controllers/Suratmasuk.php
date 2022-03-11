@@ -2,16 +2,16 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class SuratMasuk extends CI_Controller {
-    function __construct()
+    public function __construct()
     {
         parent::__construct();
         cekmasuk();
         $this->load->Model('Suratmasuk_m');
         $this->load->helper('url');
     }
-    function index()
+
+    public function index()
     {
-        // $data['suratmasuk'] = $this->Suratmasuk_m->tampil_data('surat_masuk')->result();
         $data['suratmasuk'] = $this->Suratmasuk_m->join2left();
         $data['title'] = "Surat Masuk | Disposisi";
         $this->load->view('template/template',$data);
@@ -19,7 +19,7 @@ class SuratMasuk extends CI_Controller {
         $this->load->view('template/footer',$data);
     }
     
-    function tambah()
+    public function tambah()
 	{
         $data['sifatsurat'] = $this->Suratmasuk_m->get('sifat_surat');
         $this->form_validation->set_rules('sifatsurat_id', 'Sifat Surat', 'required');
@@ -68,7 +68,6 @@ class SuratMasuk extends CI_Controller {
             $data2 = [
                 'suratmasuk_id' => $id,
             ];
-            // var_dump($id);
             $this->Suratmasuk_m->input_data($data2, 'riwayat_surat');
             $this->session->set_flashdata('sukses', 'Surat Masuk Berhasil Ditambahkan');
             redirect('suratmasuk');
@@ -87,7 +86,7 @@ class SuratMasuk extends CI_Controller {
         $this->form_validation->set_rules('perihal', 'Perihal/Isi Surat', 'required');
     }
 
-    function edit($id_suratmasuk)
+    public function edit($id_suratmasuk)
     {
         $this->_validasi();
         $data['detail'] = $this->Suratmasuk_m->getDetail($id_suratmasuk);
@@ -104,7 +103,6 @@ class SuratMasuk extends CI_Controller {
         $id_suratmasuk = $this->input->post('id');
         $ket = ['id_suratmasuk' => $id_suratmasuk];
         $detail = $this->Suratmasuk_m->detailupdate('surat_masuk', $ket);
-        // // var_dump($detail);
             $dokumen = $_FILES['dokumen']['name'];
             if ($dokumen) {
                 $config['upload_path']   = './assets/file/suratmasuk';
@@ -131,20 +129,18 @@ class SuratMasuk extends CI_Controller {
             'dokumen' => $dokumen,
             'perihal' => $this->input->post('perihal')
         ];
-        // var_dump($data);
         $this->Suratmasuk_m->update('surat_masuk', $data, $ket);
         $this->session->set_flashdata('sukses', 'Surat Masuk Berhasil Diubah');
         redirect('suratmasuk');
     }
 
-    function detail($id_suratmasuk)
+    public function detail($id_suratmasuk)
     {
         $detail = $this->Suratmasuk_m->detail_data($id_suratmasuk);
         $data['detail'] = $detail;
         $sifatsurat_id = $detail->sifatsurat_id;
         $ket = ['id_suratmasuk' => $id_suratmasuk];
         $data['datapeg'] = $this->Suratmasuk_m->join2left2($ket, $id_suratmasuk);
-        // var_dump( $data['datapeg']);
         $data['suratmasuk'] = $this->Suratmasuk_m->get('surat_masuk', ['id_suratmasuk' => $id_suratmasuk]);
         $data['title'] = 'Detail Surat Masuk | Disposisi';
         $this->load->view('template/template', $data);
@@ -152,7 +148,7 @@ class SuratMasuk extends CI_Controller {
         $this->load->view('template/footer', $data);
     }
 
-    function hapus($id_suratmasuk)
+    public function hapus($id_suratmasuk)
 	{
 		$where = array('id_suratmasuk' => $id_suratmasuk);
 		$this->Suratmasuk_m->hapus_data($where, 'surat_masuk');
@@ -163,18 +159,13 @@ class SuratMasuk extends CI_Controller {
     public function pdf($id_suratmasuk)
     {
 
-        //Ambil Data Barang Keluar
-        // $data['id_barangkeluar'] = $data['id_barangkeluar']
+        //Ambil Data
         $detail = $this->Suratmasuk_m->detail_data($id_suratmasuk);
         $this->data['detail'] = $detail;
         $sifatsurat_id = $detail->sifatsurat_id;
         $ket = ['id_suratmasuk' => $id_suratmasuk];
         $datapeg = $this->Suratmasuk_m->join3left($ket, $id_suratmasuk);
         $this->data['datapeg'] = $datapeg;
-        // $detaildispo = $this->Suratmasuk_m->detail_data2($id_suratmasuk);
-        // $this->data['detaildispo'] = $detaildispo;
-        // $suratmasuk_id = $detaildispo->suratmasuk_id;
-        // var_dump($data['detail']);
 
         // panggil library yang kita buat sebelumnya yang bernama pdfgenerator
         $this->load->library('pdfgenerator');
